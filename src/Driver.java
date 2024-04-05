@@ -4,8 +4,12 @@ import java.util.ArrayList;
 
 public class Driver {
     public static void main(String[] args) throws FileNotFoundException {
-        VictimPicker v = new VictimPicker();
-        VictimGUI GUI = new VictimGUI(v);
+
+
+
+        //Deprecated Panels
+        //VictimPicker v = new VictimPicker();
+        //VictimGUI GUI = new VictimGUI(v);
 
     }
 }
