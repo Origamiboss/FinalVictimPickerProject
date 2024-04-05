@@ -134,6 +134,10 @@ public class RoundedButton extends JButton {
             int x = (getWidth() - getImage().getWidth(this)) / 2;
             int y = (getHeight() - getImage().getHeight(this)) / 2;
             g2.drawImage(getImage(), x, y, this);
+        if (image != null) {
+            int x = (getWidth() - image.getWidth(this)) / 2;
+            int y = (getHeight() - image.getHeight(this)) / 2;
+            g2.drawImage(image, x, y, this);
         } else {
             // Draw text if no image
             super.paintComponent(g2);
@@ -151,6 +155,9 @@ public class RoundedButton extends JButton {
 
     public Image getImage(){
         return image;
+    }
+
+        repaint();
     }
 
     protected int getCornerRadius() {

@@ -1,15 +1,15 @@
 package src.Main.UI.Panels;
 
-import src.Main.Holder;
+
 import src.Main.UI.Format.VicFormatter;
 import src.Main.UI.Frames.*;
-import src.UIElements.Buttons.RoundButton;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Colors.Images;
 import src.UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
 import java.awt.*;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.HashMap;
@@ -26,6 +26,7 @@ public class ControlPanel {
     private VicFormatter exit;
     private VicFormatter topPanel;
     private HashMap<String, JComponent> map;
+
     private Holder holder;
 
     public ControlPanel(CurrentUITheme theme, Holder holder) {
@@ -178,4 +179,5 @@ public class ControlPanel {
 
         controlPanel.repaint(); // Repaint the control panel to reflect the theme changes
     }
+
 }

@@ -22,6 +22,8 @@ public class UIColors {
     final public static String[] colors = {"charcoal", "cream", "moss", "navy", "marigold", "crimson", "egg",
             "teamblue", "teamred", "teamgreen","teamyellow", "mandarin", "gbbackscreen", "gbfrontscreen"};
 
+
+
     public static ColorScheme getColorScheme(String name) {
         switch (name.toLowerCase()) {
             case "charcoal":

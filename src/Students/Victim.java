@@ -24,6 +24,7 @@ public class Victim {
         this.phone += phone;
         if (this.phone < 0)
             this.phone = 0;
+
     }
 
     public int getJail() {
@@ -52,6 +53,7 @@ public class Victim {
         this.points += points;
         if (this.points < 0)
             this.points = 0;
+
     }
 
     public int getAbsences() {
@@ -62,6 +64,7 @@ public class Victim {
         this.absences += absences;
         if (this.absences < 0)
             this.absences = 0;
+
     }
 
     public int getNumPicked() {
@@ -80,6 +83,7 @@ public class Victim {
         this.passed += passed;
         if (this.passed < 0)
             this.passed = 0;
+
     }
 
     public String getImage() {

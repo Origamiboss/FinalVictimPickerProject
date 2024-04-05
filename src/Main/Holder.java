@@ -1,18 +1,20 @@
 package src.Main;
 
-import src.Main.VictimPanelManager;
+
+
 import src.Questions.Questions;
 import src.Students.Victim;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.PlayerPanel;
 import src.WriterReader.Input;
 import src.WriterReader.RandomizeImages;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
+
 import java.util.HashMap;
 
 import static src.Main.Assets.filePaths.*;
@@ -28,7 +30,7 @@ public class Holder {
     private VictimPanelManager manager;
 
     public Holder() throws FileNotFoundException{
-        //Option to change filepath. Especially on first launch
+
         theme = Input.readUIThemeFile(saveFilePath + uiTheme);
         victims = Input.readStudentFile(saveFilePath + vicList);
         questions = Input.readQuestionsFile(saveFilePath + questList);
@@ -48,6 +50,7 @@ public class Holder {
             JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
         }
     }
+
 
     public ArrayList<Victim> getVictims(){
         return victims;

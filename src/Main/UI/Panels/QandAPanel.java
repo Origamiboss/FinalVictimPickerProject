@@ -32,7 +32,10 @@ public class QandAPanel {
     TextCanvas questionDisplayField3;
     TextCanvas questionDisplayField4;
 
+
     private PlayerOptions.sendButtonInstruct sendButtonInstruct;
+
+
 
     RoundedPanel optionHolder; // Where the option buttons will be
 
@@ -230,9 +233,8 @@ public class QandAPanel {
             System.out.println("No option selected or no correct option found.");
         }
 
-
-
     }
+
 
     private void displayNextQuestion() {
         if (questionsQueue.isEmpty() && displayedQuestions.isEmpty()) {

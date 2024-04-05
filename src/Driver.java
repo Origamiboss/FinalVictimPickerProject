@@ -16,7 +16,6 @@ import java.util.HashMap;
 
 public class Driver {
     public static void main(String[] args) throws FileNotFoundException {
-
         Frontend frontend = new Frontend();
         HashMap<String, JComponent> map = frontend.getHolder().getMap();
 
@@ -54,6 +53,7 @@ public class Driver {
                 }
             }
         });
+
 
     }
 }

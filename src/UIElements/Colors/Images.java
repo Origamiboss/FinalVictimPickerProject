@@ -67,6 +67,7 @@ public class Images {
         }
     }
 
+
     public Images(BufferedImage bufImage){
         this.image = bufImage;
     }
