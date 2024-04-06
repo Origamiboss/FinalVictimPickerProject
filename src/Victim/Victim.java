@@ -1,3 +1,5 @@
+package src.Victim;
+
 public class Victim {
     private String name;
     private int timesPicked;

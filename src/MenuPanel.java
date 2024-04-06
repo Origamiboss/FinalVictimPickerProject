@@ -1,3 +1,8 @@
+package src;
+
+import src.Victim.Victim;
+import src.Victim.VictimPicker;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

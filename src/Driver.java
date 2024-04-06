@@ -1,7 +1,6 @@
 package src;
 
 import src.ButtonCommands.AddPlayerMenu;
-import src.Interfaces.Instructions;
 import src.Interfaces.SimpleInstructions;
 import src.Main.Frontend;
 import src.Main.VictimPanelManager;
@@ -11,7 +10,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Driver {

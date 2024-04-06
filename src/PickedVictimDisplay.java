@@ -1,3 +1,7 @@
+package src;
+
+import src.Victim.Victim;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

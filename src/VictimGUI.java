@@ -1,3 +1,7 @@
+package src;
+
+import src.Victim.VictimPicker;
+
 import javax.swing.*;
 import java.awt.*;
 
