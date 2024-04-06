@@ -1,0 +1,373 @@
+First name:Channing
+Last name:Andrews
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Danny
+Last name:Barmanbekov
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Nate
+Last name:Benson
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Nate
+Last name:Bittle
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Excalibur
+Last name:Bunker
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Vincent
+Last name:Climer
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Nicholas
+Last name:Colet
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Fabrice
+Last name:Faustin
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Seth
+Last name:Garner
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Nicholas
+Last name:Gilleran
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Hunter
+Last name:Henderson
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Akhil John
+Last name:Bosco
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Jeremiah
+Last name:Jordan
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Bret
+Last name:Kagebein
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Owen
+Last name:Kiilsgaard
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Chuckie
+Last name:Koch
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Reagan
+Last name:Kohler
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Jace
+Last name:Kramer
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Levi
+Last name:Landers
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Abraham
+Last name:Martinez Brito
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Chandler
+Last name:Mason
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Matthew
+Last name:McCallister
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Connor
+Last name:Myers
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Oluwatobiloba
+Last name:Olaoye
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Connor
+Last name:Parr
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Markie
+Last name:Salzwedel
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Canon
+Last name:Shaw
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Gavin
+Last name:Smith
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Josh
+Last name:Stapera
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Justin
+Last name:Stauffer
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Kevin
+Last name:Stinnett
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Ethan
+Last name:Stucker
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Dakotah
+Last name:Sutton-Rodriguez
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
+
+First name:Heather
+Last name:Watson
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2
