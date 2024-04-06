@@ -25,6 +25,7 @@ public class Holder {
     private VictimPanelManager manager;
 
     public Holder() throws FileNotFoundException{
+        //Option to change filepath. Especially on first launch
         theme = Input.readUIThemeFile(saveFilePath + uiTheme);
         victims = Input.readStudentFile(saveFilePath + vicList);
         questions = Input.readQuestionsFile(saveFilePath + questList);
