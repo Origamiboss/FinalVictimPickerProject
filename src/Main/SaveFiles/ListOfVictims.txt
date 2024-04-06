@@ -67,6 +67,7 @@ Jail:2
 First name:Nicholas
 Last name:Colet
 Nickname:Nicholas C
+Nickname:
 Points:0
 Absents:0
 Answered:0
@@ -100,6 +101,7 @@ Jail:2
 First name:Nicholas
 Last name:Gilleran
 Nickname:Nicholas G
+Nickname:
 Points:0
 Absents:0
 Answered:0
@@ -350,14 +352,4 @@ Passed:0
 Phone:2
 Jail:2
 
-First name:Heather
-Last name:Watson
-Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
 

@@ -4,8 +4,6 @@ out/
 !**/src/test/**/out/
 .idea/
 *.iml
-/src/Main/Assets/
-/src/Main/SaveFiles/
 
 
 ### Eclipse ###
