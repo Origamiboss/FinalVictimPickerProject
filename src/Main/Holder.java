@@ -117,5 +117,34 @@ public class Holder {
             JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
         }
     }
+    public void editVictim(Victim v){
+        //Update
+        //Find the victim with the same name
+        boolean foundTheTarget = false;
+        for(Victim vic : victims){
+            if(vic.getName().getFirstName() == v.getName().getFirstName() &&
+            vic.getName().getLastName() == v.getName().getLastName()){
+                 //replace the vic with v
+                victims.add(victims.indexOf(vic), v);
+                victims.remove(vic);
 
+                foundTheTarget = true;
+                break;
+            }
+        }
+        try{
+            if(foundTheTarget)
+                src.WriterReader.Output.writeStudentFile(victims);
+            else
+                throw new Exception();
+        }catch(IOException e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
+        }catch(Exception e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showConfirmDialog(errorHolder,"ERROR: Updated Victim Not Found");
+        }
+    }
 }
