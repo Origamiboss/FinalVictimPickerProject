@@ -2,6 +2,8 @@ package src.Main.UI.Panels;
 
 
 import src.Main.UI.Format.VicFormatter;
+import src.Students.Victim;
+import src.UIElements.Buttons.RoundButton;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Colors.Images;
 import src.UIElements.Panels.RoundedPanel;
@@ -231,6 +233,142 @@ public class ControlPanel {
         parent.setVisible(true);
     }
     private void EditVictimPopUp(){
+        //Experiment
+        final JFrame parent = new JFrame();
+        //create the Victim Select Panel
+        JPanel optionMenu = new JPanel();
+        optionMenu.setPreferredSize(new Dimension(200,holder.getVictims().size() * 31));
+        for (src.Students.Victim v : holder.getVictims()) {
+            String name = v.getName().getFirstName() + " " + v.getName().getLastName();
+            JButton newButton = new JButton(name);
+            optionMenu.add(newButton);
+            newButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //create the Panel to Edit that specific victim
+                    final JFrame victimEditor = new JFrame();
+                    JPanel statHolder = new JPanel();
+                    statHolder.setPreferredSize(new Dimension(300,300));
+                    victimEditor.add(statHolder);
+                    //Create the name Holder
+                    statHolder.add(new JLabel(name));
 
+                    //create the stat holders and editors
+                    //Put them into their own panel so they stay together by using a pointer
+                    JPanel tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Nickname:"));
+                    JTextField Nickname = new JTextField();
+                    Nickname.setPreferredSize(new Dimension(100, 25));
+                    Nickname.setText(v.getName().getNickName());
+                    tempHolder.add(Nickname);
+                    statHolder.add(tempHolder);
+
+                    tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Times Picked:"));
+                    JTextField TimesPicked = new JTextField();
+                    TimesPicked.setPreferredSize(new Dimension(100,25));
+                    TimesPicked.setText(Integer.toString(v.getNumPicked()));
+                    tempHolder.add(TimesPicked);
+                    statHolder.add(tempHolder);
+
+                    tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Points:"));
+                    JTextField Points = new JTextField();
+                    Points.setPreferredSize(new Dimension(100,25));
+                    Points.setText(Integer.toString(v.getPoints()));
+                    tempHolder.add(Points);
+                    statHolder.add(tempHolder);
+
+                    tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Absents:"));
+                    JTextField Absents = new JTextField();
+                    Absents.setPreferredSize(new Dimension(100,25));
+                    Absents.setText(Integer.toString(v.getAbsences()));
+                    tempHolder.add(Absents);
+                    statHolder.add(tempHolder);
+
+                    tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Answered:"));
+                    JTextField Answered = new JTextField();
+                    Answered.setPreferredSize(new Dimension(100,25));
+                    Answered.setText(Integer.toString(v.getAnswered()));
+                    tempHolder.add(Answered);
+                    statHolder.add(tempHolder);
+
+                    tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Passed:"));
+                    JTextField Passed = new JTextField();
+                    Passed.setPreferredSize(new Dimension(100,25));
+                    Passed.setText(Integer.toString(v.getPassed()));
+                    tempHolder.add(Passed);
+                    statHolder.add(tempHolder);
+
+                    tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Phone:"));
+                    JTextField Phone = new JTextField();
+                    Phone.setPreferredSize(new Dimension(100,25));
+                    Phone.setText(Integer.toString(v.getPhone()));
+                    tempHolder.add(Phone);
+                    statHolder.add(tempHolder);
+
+                    tempHolder = new JPanel();
+                    tempHolder.setPreferredSize(new Dimension(300,25));
+                    tempHolder.add(new JLabel("Jail:"));
+                    JTextField Jail = new JTextField();
+                    Jail.setPreferredSize(new Dimension(100,25));
+                    Jail.setText(Integer.toString(v.getJail()));
+                    tempHolder.add(Jail);
+                    statHolder.add(tempHolder);
+
+
+                    JButton saveButton = new JButton("Save Stats");
+                    statHolder.add(saveButton);
+                    saveButton.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            //save stats
+                            v.getName().setNickName(Nickname.getText());
+                            Victim newGuy = new Victim(v.getName(),
+                                    Integer.parseInt(Points.getText()),
+                                    Integer.parseInt(Absents.getText()),
+                                    Integer.parseInt(TimesPicked.getText()),
+                                    Integer.parseInt(Passed.getText()),
+                                    Integer.parseInt(Answered.getText()),
+                                    Integer.parseInt(Phone.getText()),
+                                    Integer.parseInt(Jail.getText()));
+                            holder.editVictim(newGuy);
+
+                            //kill the frame
+                            victimEditor.dispatchEvent(new WindowEvent(victimEditor, WindowEvent.WINDOW_CLOSING));
+                            parent.dispatchEvent(new WindowEvent(parent, WindowEvent.WINDOW_CLOSING));
+                        }
+                    });
+
+
+                    victimEditor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    victimEditor.pack();
+                    victimEditor.setVisible(true);
+                }
+            });
+
+        }
+        JScrollPane scrollPane = new JScrollPane(optionMenu);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setBounds(50, 30, 200, 300);
+        JPanel contentPane = new JPanel(null);
+        contentPane.setPreferredSize(new Dimension(500, 400));
+        contentPane.add(scrollPane);
+        parent.setContentPane(contentPane);
+        parent.pack();
+        parent.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        parent.setVisible(true);
     }
 }

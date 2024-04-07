@@ -150,6 +150,7 @@ public class Holder {
                 //replace the vic with v
                 victims.add(victims.indexOf(vic), v);
                 victims.remove(vic);
+
                 foundTheTarget = true;
                 break;
             }
@@ -177,4 +178,5 @@ public class Holder {
     public void exit() {
         System.exit(0);
     }
-}}
+}
+
