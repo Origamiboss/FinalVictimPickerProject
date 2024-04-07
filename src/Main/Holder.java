@@ -10,7 +10,6 @@ import src.WriterReader.RandomizeImages;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -90,12 +89,15 @@ public class Holder {
         map.putAll(inMap);
     }
 
+
     public VictimPanelManager getManager(){
         return manager;
     }
 
+
     public void addVictim(String name){
         String[] names = name.split(" ");
+        String SaveString = "";
         Victim newGuy;
 
         if(names.length < 2){
@@ -116,6 +118,7 @@ public class Holder {
 
         //add the new victim to the file
         try {
+
             victims.add(newGuy);
             src.WriterReader.Output.writeStudentFile(victims);
         }catch(IOException e){
@@ -136,6 +139,7 @@ public class Holder {
             JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
         }
     }
+
     public void editVictim(Victim v){
         //Update
         //Find the victim with the same name
@@ -173,4 +177,4 @@ public class Holder {
     public void exit() {
         System.exit(0);
     }
-}
+}}

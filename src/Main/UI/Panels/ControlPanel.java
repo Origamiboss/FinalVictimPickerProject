@@ -2,16 +2,14 @@ package src.Main.UI.Panels;
 
 
 import src.Main.UI.Format.VicFormatter;
-import src.Main.UI.Frames.*;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Colors.Images;
 import src.UIElements.Panels.RoundedPanel;
-
 import javax.swing.*;
 import java.awt.*;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,10 +24,12 @@ public class ControlPanel {
     private VicFormatter exit;
     private VicFormatter topPanel;
     private HashMap<String, JComponent> map;
+    private src.Main.Holder holder;
 
     private Holder holder;
 
     public ControlPanel(CurrentUITheme theme, Holder holder) {
+
         map = new HashMap<>();
 
         //assign the main holder
@@ -115,12 +115,16 @@ public class ControlPanel {
         addVictim.getComponent().addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 new AddVictimFrame(holder);
+
+                AddVictimPopUp();
             }
         });
         //Call the functions for the Delete victim button
         deleteVictim.getComponent().addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
+
                 new DeleteVictimFrame(holder);
+                DeleteVictimPopUp();
             }
         });
         //Call the functions for the Delete victim button
@@ -146,6 +150,8 @@ public class ControlPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 new ExitFrame(holder);
+
+                EditVictimPopUp();
             }
         });
     }
@@ -179,5 +185,52 @@ public class ControlPanel {
 
         controlPanel.repaint(); // Repaint the control panel to reflect the theme changes
     }
+    //Add Victim's Popup
+    private void AddVictimPopUp(){
+        //Experiment
+        final JFrame parent = new JFrame();
+        String VictimName = JOptionPane.showInputDialog(parent,
+                "Add the Victims Name", null);
+        if(VictimName != null) {
+            holder.addVictim(VictimName);
+        }
 
+    }
+    private void DeleteVictimPopUp(){
+        //Experiment
+        final JFrame parent = new JFrame();
+        //create the options panel
+        JPanel optionMenu = new JPanel();
+        optionMenu.setPreferredSize(new Dimension(200,holder.getVictims().size() * 31));
+        for (src.Students.Victim v : holder.getVictims()) {
+            String name = v.getName().getFirstName() + " " + v.getName().getLastName();
+            JButton newButton = new JButton(name);
+            optionMenu.add(newButton);
+            newButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //call delete for the button
+                    holder.deleteVictim(v);
+
+                    //Kill the frame
+                    parent.dispatchEvent(new WindowEvent(parent, WindowEvent.WINDOW_CLOSING));
+                }
+            });
+
+        }
+        JScrollPane scrollPane = new JScrollPane(optionMenu);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setBounds(50, 30, 200, 300);
+        JPanel contentPane = new JPanel(null);
+        contentPane.setPreferredSize(new Dimension(500, 400));
+        contentPane.add(scrollPane);
+        parent.setContentPane(contentPane);
+        parent.pack();
+        parent.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        parent.setVisible(true);
+    }
+    private void EditVictimPopUp(){
+
+    }
 }

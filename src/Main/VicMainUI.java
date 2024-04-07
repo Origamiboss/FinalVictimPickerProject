@@ -127,7 +127,7 @@ public class VicMainUI {
         contentPanel.setOpaque(false);
 
         // Control panel on the left
-        ControlPanel controlPanel = new ControlPanel(mainHolder.getTheme());
+        ControlPanel controlPanel = new ControlPanel(mainHolder.getTheme(), mainHolder);
         // Search panel at the top
         SearchPanel searchPanel = new SearchPanel(mainHolder.getTheme());
 
