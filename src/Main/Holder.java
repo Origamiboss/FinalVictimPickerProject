@@ -9,6 +9,7 @@ import src.WriterReader.RandomizeImages;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -72,6 +73,49 @@ public class Holder {
 
     public void setMap(HashMap<String, JComponent> inMap){
         map.putAll(inMap);
+    }
+
+    public void addVictim(String name){
+        String[] names = name.split(" ");
+        String SaveString = "";
+        Victim newGuy;
+        if(names.length < 2){
+            //only save one name
+            src.Students.StudentFunctions.Names n = new src.Students.StudentFunctions.Names();
+            n.setFirstName(names[0]);
+            n.setLastName("");
+            n.setNickName("");
+            newGuy = new Victim(n, 0,0,0,0,0,2,2);
+        }else{
+            //save the first name and the very last name
+            src.Students.StudentFunctions.Names n = new src.Students.StudentFunctions.Names();
+            n.setFirstName(names[0]);
+            n.setLastName(names[names.length - 1]);
+            n.setNickName("");
+            newGuy = new Victim(n, 0,0,0,0,0,2,2);
+        }
+
+        //add the new victim to the file
+        try {
+            src.WriterReader.Output.writeStudentFile(victims);
+            victims.add(newGuy);
+        }catch(IOException e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
+        }
+    }
+
+    public void deleteVictim(Victim v){
+        //Delete The Victim
+        try{
+            victims.remove(v);
+            src.WriterReader.Output.writeStudentFile(victims);
+        }catch(IOException e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
+        }
     }
 
 }
