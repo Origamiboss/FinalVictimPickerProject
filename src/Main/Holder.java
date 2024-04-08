@@ -78,8 +78,8 @@ public class Holder {
 
     public void addVictim(String name){
         String[] names = name.split(" ");
-        String SaveString = "";
         Victim newGuy;
+
         if(names.length < 2){
             //only save one name
             src.Students.StudentFunctions.Names n = new src.Students.StudentFunctions.Names();
@@ -98,8 +98,8 @@ public class Holder {
 
         //add the new victim to the file
         try {
-            src.WriterReader.Output.writeStudentFile(victims);
             victims.add(newGuy);
+            src.WriterReader.Output.writeStudentFile(victims);
         }catch(IOException e){
             //error
             JPanel errorHolder = new JPanel();

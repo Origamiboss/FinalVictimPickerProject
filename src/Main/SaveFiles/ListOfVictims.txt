@@ -45,8 +45,8 @@ Jail:2
 First name:Excalibur
 Last name:Bunker
 Nickname:
-Points:0
-Absents:0
+Points:100
+Absents:5
 Answered:0
 Times Picked:0
 Passed:0
@@ -55,9 +55,9 @@ Jail:2
 
 First name:Vincent
 Last name:Climer
-Nickname:The Cool Guy
-Points:0
-Absents:0
+Nickname:The Cool Guy2.0
+Points:100
+Absents:5
 Answered:0
 Times Picked:0
 Passed:0
