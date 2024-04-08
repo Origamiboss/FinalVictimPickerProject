@@ -197,10 +197,4 @@ public class ControlPanel {
 
         controlPanel.repaint(); // Repaint the control panel to reflect the theme changes
     }
-
-    //Options PopUp create an Options class
-    private void SettingsPopUp(){
-        //create the settings frame object
-        SettingsFrame mainFrame = new SettingsFrame();
-    }
 }

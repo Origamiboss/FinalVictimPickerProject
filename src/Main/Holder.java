@@ -38,6 +38,15 @@ public class Holder {
     public CurrentUITheme getTheme(){
         return theme;
     }
+    public void setTheme(CurrentUITheme c){
+        try {
+            src.WriterReader.Output.writeUIFile(c);
+        }catch(IOException e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
+        }
+    }
 
     public void setTheme(CurrentUITheme c){
         try {

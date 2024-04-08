@@ -73,8 +73,7 @@ public class Input {
             }
         }
         scanner.close();
-
-        return new CurrentUITheme(foreground, background);
+        return new CurrentUITheme(background, foreground);
     }
 
     public static ArrayList<Questions> readQuestionsFile(String fileName) throws FileNotFoundException {

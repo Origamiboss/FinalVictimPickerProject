@@ -11,6 +11,7 @@ import src.UIElements.Colors.UIColors;
 
 public class SettingsFrame extends JFrame {
     final private JFrame self = this;
+
     private Holder holder;
     public SettingsFrame(Holder h){
         holder = h;
@@ -71,3 +72,4 @@ public class SettingsFrame extends JFrame {
         holder.setTheme(new CurrentUITheme(background, foreground));
     }
 }
+
