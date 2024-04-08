@@ -55,7 +55,7 @@ Jail:2
 
 First name:Vincent
 Last name:Climer
-Nickname:
+Nickname:The Cool Guy
 Points:0
 Absents:0
 Answered:0
@@ -352,4 +352,13 @@ Passed:0
 Phone:2
 Jail:2
 
-
+First name:Heather
+Last name:Watson
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:2
+Jail:2

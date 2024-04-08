@@ -13,7 +13,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
-
 import java.util.HashMap;
 
 import static src.Main.Assets.filePaths.*;
@@ -150,7 +149,6 @@ public class Holder {
                 //replace the vic with v
                 victims.add(victims.indexOf(vic), v);
                 victims.remove(vic);
-
                 foundTheTarget = true;
                 break;
             }
