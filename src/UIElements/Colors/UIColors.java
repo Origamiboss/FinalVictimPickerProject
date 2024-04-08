@@ -17,7 +17,8 @@ public class UIColors {
     final static ColorScheme TEAMYELLOW = new ColorScheme(Color.decode("#FFFF00"), Color.decode("#E1E004"), Color.decode("#C1C002"));
     final static ColorScheme MANDARIN = new ColorScheme(Color.decode("#EB813B"), Color.decode("#D66F2B"), Color.decode("#B55718"));
 
-
+    final public static String[] colors = {"charcoal", "cream", "moss", "navy", "marigold", "crimson", "egg",
+    "teamblue", "teamred", "teamgreen","teamyellow"};
 
     public static ColorScheme getColorScheme(String name) {
         switch (name.toLowerCase()) {

@@ -1,2 +1,2 @@
-Background:charcoal
-Foreground:cream
+Background:cream
+Foreground:charcoal
