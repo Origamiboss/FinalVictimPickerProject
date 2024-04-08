@@ -17,6 +17,7 @@ public class StudentTable {
     private JButton submit;
 
     public StudentTable(ArrayList<PlayerPanel> inVicPanels){
+    public EditClass(ArrayList<PlayerPanel> inVicPanels){
         vicPanels = inVicPanels;
         for (PlayerPanel vics : vicPanels){
             victims.add(vics.getVictim());

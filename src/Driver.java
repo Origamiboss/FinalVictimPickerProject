@@ -20,6 +20,12 @@ public class Driver {
         // Testing features
         RoundButton checkPlayers = (RoundButton) map.get("csButton3");
 
+        Frontend frontend = new Frontend();
+        HashMap<String, JComponent> map = frontend.getHolder().getMap();
+
+        // Testing features
+        RoundButton checkPlayers = (RoundButton) map.get("csButton3");
+
         // 1. Grab the button
         RoundButton addPlayers = (RoundButton) map.get("csButton2");
 
