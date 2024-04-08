@@ -1,4 +1,4 @@
-package src.Main.UI.Frames;
+package Main.UI.Frames;
 
 import javax.swing.*;
 import java.awt.*;

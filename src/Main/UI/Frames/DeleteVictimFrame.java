@@ -1,5 +1,4 @@
-package src.Main.UI.Frames;
-
+package Main.UI.Frames;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -43,3 +42,4 @@ public class DeleteVictimFrame extends JFrame{
         self.setVisible(true);
     }
 }
+

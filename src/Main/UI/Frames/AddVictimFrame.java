@@ -1,4 +1,4 @@
-package src.Main.UI.Frames;
+package Main.UI.Frames;
 
 import javax.swing.*;
 
@@ -11,3 +11,4 @@ public class AddVictimFrame extends JFrame {
         }
     }
 }
+

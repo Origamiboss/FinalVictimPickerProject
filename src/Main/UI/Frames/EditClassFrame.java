@@ -1,4 +1,4 @@
-package src.Main.UI.Frames;
+package Main.UI.Frames;
 
 import javax.swing.*;
 import java.awt.*;
@@ -211,4 +211,5 @@ public class EditClassFrame extends JFrame {
         self.dispatchEvent(new WindowEvent(self, WindowEvent.WINDOW_CLOSING));
 
     }
+
 }
