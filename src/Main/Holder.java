@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 
 import static src.Main.Assets.filePaths.*;
@@ -123,11 +124,10 @@ public class Holder {
         boolean foundTheTarget = false;
         for(Victim vic : victims){
             if(vic.getName().getFirstName() == v.getName().getFirstName() &&
-            vic.getName().getLastName() == v.getName().getLastName()){
+                vic.getName().getLastName() == v.getName().getLastName()){
                  //replace the vic with v
                 victims.add(victims.indexOf(vic), v);
                 victims.remove(vic);
-
                 foundTheTarget = true;
                 break;
             }
@@ -137,14 +137,18 @@ public class Holder {
                 src.WriterReader.Output.writeStudentFile(victims);
             else
                 throw new Exception();
-        }catch(IOException e){
+        }catch(ConcurrentModificationException e) {
+            //error because two things are editing at the same time
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: File in use.");
+        }catch (IOException e){
             //error
             JPanel errorHolder = new JPanel();
-            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: File Not Found");
         }catch(Exception e){
             //error
             JPanel errorHolder = new JPanel();
-            JOptionPane.showConfirmDialog(errorHolder,"ERROR: Updated Victim Not Found");
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: Updated Victim Not Found");
         }
     }
 }
