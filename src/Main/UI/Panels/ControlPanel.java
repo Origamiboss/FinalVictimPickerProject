@@ -29,12 +29,14 @@ public class ControlPanel {
     private VicFormatter topPanel;
     private HashMap<String, JComponent> map;
     private src.Main.Holder holder;
+    private src.Main.VicMainUI mainGui;
 
-    public ControlPanel(CurrentUITheme theme, src.Main.Holder holder) {
+    public ControlPanel(CurrentUITheme theme, src.Main.Holder holder, src.Main.VicMainUI m) {
         map = new HashMap<>();
 
         //assign the main holder
         this.holder = holder;
+        mainGui = m;
 
         controlPanel = new RoundedPanel(theme);
         map.put("csButton1", controlPanel);
@@ -141,6 +143,20 @@ public class ControlPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 new SettingsFrame(holder);
+            }
+        });
+        save.getComponent().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //save data
+                holder.saveVictimData();
+            }
+        });
+        exit.getComponent().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //close the program
+                mainGui.closeApplication();
             }
         });
     }

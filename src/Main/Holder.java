@@ -160,4 +160,21 @@ public class Holder {
             JOptionPane.showMessageDialog(errorHolder,"ERROR: Updated Victim Not Found");
         }
     }
+    public void saveVictimData(){
+        try{
+            src.WriterReader.Output.writeStudentFile(victims);
+        }catch(ConcurrentModificationException e) {
+            //error because two things are editing at the same time
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: File in use.");
+        }catch (IOException e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: File Not Found");
+        }catch(Exception e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: Exception Thrown");
+        }
+    }
 }
