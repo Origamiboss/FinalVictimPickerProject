@@ -38,6 +38,7 @@ public class Holder {
     public CurrentUITheme getTheme(){
         return theme;
     }
+
     public void setTheme(CurrentUITheme c){
         try {
             src.WriterReader.Output.writeUIFile(c);
@@ -196,6 +197,7 @@ public class Holder {
             JPanel errorHolder = new JPanel();
             JOptionPane.showMessageDialog(errorHolder,"ERROR: Exception Thrown");
         }
+
     }
 }
 

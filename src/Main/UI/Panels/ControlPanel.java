@@ -174,13 +174,6 @@ public class ControlPanel {
                 holder.saveVictimData();
             }
         });
-        exit.getComponent().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                //close the program
-                mainGui.closeApplication();
-            }
-        });
     }
 
     public JPanel getFormat() {
