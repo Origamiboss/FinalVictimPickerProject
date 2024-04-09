@@ -15,7 +15,6 @@ public class SettingsFrame extends JFrame {
     private Holder holder;
     public SettingsFrame(Holder h){
         holder = h;
-
         //make the holder panel
         self.setTitle("Settings");
         JPanel statHolder = new JPanel();

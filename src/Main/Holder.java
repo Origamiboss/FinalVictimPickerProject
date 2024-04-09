@@ -180,8 +180,22 @@ public class Holder {
         }
     }
 
-    public void exit() {
-        System.exit(0);
+    public void saveVictimData(){
+        try{
+            src.WriterReader.Output.writeStudentFile(victims);
+        }catch(ConcurrentModificationException e) {
+            //error because two things are editing at the same time
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: File in use.");
+        }catch (IOException e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: File Not Found");
+        }catch(Exception e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showMessageDialog(errorHolder,"ERROR: Exception Thrown");
+        }
     }
 }
 
