@@ -1,6 +1,7 @@
 package src;
 
 import src.ButtonCommands.AddPlayerMenu;
+import src.Interfaces.Instructions;
 import src.Interfaces.SimpleInstructions;
 import src.Main.Frontend;
 import src.Main.VictimPanelManager;
@@ -10,15 +11,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Driver {
     public static void main(String[] args) throws FileNotFoundException {
-        Frontend frontend = new Frontend();
-        HashMap<String, JComponent> map = frontend.getHolder().getMap();
-
-        // Testing features
-        RoundButton checkPlayers = (RoundButton) map.get("csButton3");
 
         Frontend frontend = new Frontend();
         HashMap<String, JComponent> map = frontend.getHolder().getMap();
@@ -58,6 +55,9 @@ public class Driver {
             }
         });
 
+        //Deprecated Panels
+        //VictimPicker v = new VictimPicker();
+        //VictimGUI GUI = new VictimGUI(v);
 
     }
 }

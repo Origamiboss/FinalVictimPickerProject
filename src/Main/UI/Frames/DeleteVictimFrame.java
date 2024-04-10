@@ -1,4 +1,5 @@
 package Main.UI.Frames;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,8 +11,6 @@ public class DeleteVictimFrame extends JFrame{
     JFrame self = this;
     public DeleteVictimFrame(src.Main.Holder h) {
         holder = h;
-        //Assign Title
-        self.setTitle("Delete Victim");
         //create the options panel
         JPanel optionMenu = new JPanel();
         optionMenu.setPreferredSize(new Dimension(200, holder.getVictims().size() * 31));
@@ -36,7 +35,7 @@ public class DeleteVictimFrame extends JFrame{
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(50, 30, 200, 300);
         JPanel contentPane = new JPanel(null);
-        contentPane.setPreferredSize(new Dimension(300, 400));
+        contentPane.setPreferredSize(new Dimension(500, 400));
         contentPane.add(scrollPane);
         self.setContentPane(contentPane);
         self.pack();
@@ -44,4 +43,3 @@ public class DeleteVictimFrame extends JFrame{
         self.setVisible(true);
     }
 }
-

@@ -1,20 +1,18 @@
-package src.Main.UI.Frames;
+package Main.UI.Frames;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import src.Main.Holder;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Colors.UIColors;
 
 public class SettingsFrame extends JFrame {
     final private JFrame self = this;
-
-    private Holder holder;
-    public SettingsFrame(Holder h){
+    private src.Main.Holder holder;
+    public SettingsFrame(src.Main.Holder h){
         holder = h;
+
         //make the holder panel
         self.setTitle("Settings");
         JPanel statHolder = new JPanel();
@@ -71,4 +69,3 @@ public class SettingsFrame extends JFrame {
         holder.setTheme(new CurrentUITheme(background, foreground));
     }
 }
-

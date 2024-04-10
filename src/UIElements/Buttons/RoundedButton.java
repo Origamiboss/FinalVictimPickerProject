@@ -130,10 +130,6 @@ public class RoundedButton extends JButton {
         g2.fillRoundRect(inset, inset, getWidth() - inset * 2, getHeight() - inset * 2, cornerRadius, cornerRadius);
 
         // Draw image if available
-        if (getImage() != null) {
-            int x = (getWidth() - getImage().getWidth(this)) / 2;
-            int y = (getHeight() - getImage().getHeight(this)) / 2;
-            g2.drawImage(getImage(), x, y, this);
         if (image != null) {
             int x = (getWidth() - image.getWidth(this)) / 2;
             int y = (getHeight() - image.getHeight(this)) / 2;
@@ -148,15 +144,6 @@ public class RoundedButton extends JButton {
 
     public void setImage(Image image) {
         this.image = image;
-
-        revalidate();
-        repaint();
-    }
-
-    public Image getImage(){
-        return image;
-    }
-
         repaint();
     }
 

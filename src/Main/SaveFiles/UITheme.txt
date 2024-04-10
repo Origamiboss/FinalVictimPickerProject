@@ -1,4 +1,2 @@
 Background:gbfrontscreen
 Foreground:gbbackscreen
-Background:charcoal
-Foreground:cream

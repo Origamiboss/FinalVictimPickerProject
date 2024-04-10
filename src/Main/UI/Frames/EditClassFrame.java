@@ -15,8 +15,8 @@ public class EditClassFrame extends JFrame {
     public EditClassFrame(src.Main.Holder h){
         //save data thats needed
         holder = h;
-        //set title
-        self.setTitle("Edit Class");
+
+
         //create the Panel to Edit those victims
         JPanel mainpanel = new JPanel();
         self.add(mainpanel);
@@ -211,5 +211,4 @@ public class EditClassFrame extends JFrame {
         self.dispatchEvent(new WindowEvent(self, WindowEvent.WINDOW_CLOSING));
 
     }
-
 }

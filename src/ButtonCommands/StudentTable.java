@@ -1,5 +1,6 @@
 package src.ButtonCommands;
 
+import src.Main.VictimPanelManager;
 import src.Students.Victim;
 import src.UIElements.Panels.PlayerPanel;
 
@@ -16,10 +17,6 @@ public class StudentTable {
     private JButton submit;
 
     public StudentTable(ArrayList<PlayerPanel> inVicPanels){
-
-    }
-    public void EditClass(ArrayList<PlayerPanel> inVicPanels){
-
         vicPanels = inVicPanels;
         for (PlayerPanel vics : vicPanels){
             victims.add(vics.getVictim());
@@ -31,3 +28,4 @@ public class StudentTable {
 
 
 }
+

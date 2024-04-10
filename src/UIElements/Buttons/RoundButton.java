@@ -2,8 +2,6 @@ package src.UIElements.Buttons;
 
 import java.awt.*;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.Images;
-
 
 public class RoundButton extends RoundedButton {
     private int diameter;
@@ -40,18 +38,5 @@ public class RoundButton extends RoundedButton {
     @Override
     public Dimension getMaximumSize() {
         return getPreferredSize();
-    }
-
-    public void updateImage(Images newImage){
-        setImage(newImage.getImage());
-
-        this.diameter = Math.max(newImage.getImage().getWidth(null), newImage.getImage().getHeight(null)) + 20;
-        //setPreferredSize(new Dimension(diameter, diameter));
-        setMaximumSize(new Dimension(diameter, diameter));
-        setSize(diameter, diameter);
-
-        revalidate();
-        repaint();
-
     }
 }

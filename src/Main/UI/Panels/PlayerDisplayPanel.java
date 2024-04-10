@@ -27,7 +27,6 @@ public class PlayerDisplayPanel {
 
     private CurrentUserStats stats;
 
-
     private JPanel topPanel;
     private VicFormatter topFormat;
 
@@ -139,14 +138,6 @@ public class PlayerDisplayPanel {
                 randomVictim = RandStudentSelector.getRandomStudent(victims, players.stream().map(PlayerPanel::getVictim).collect(Collectors.toList()));
             } while (players.contains(randomVictim));  // Check if the randomVictim is already in the players list
             currentNewPlayer.setPlayer(randomVictim);  // Use the final reference here
-        });
-
-        RoundButton testButton = newPlayer.getTestButton();
-        testButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                newPlayer.resizeComponents(50, 50, 15, 15);
-            }
         });
 
         // Move to the next position

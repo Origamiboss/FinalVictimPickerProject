@@ -8,10 +8,8 @@ import src.UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 
 public class VicMainUI {
     private JFrame frame;
@@ -128,7 +126,7 @@ public class VicMainUI {
         contentPanel.setOpaque(false);
 
         // Control panel on the left
-        ControlPanel controlPanel = new ControlPanel(mainHolder.getTheme(), mainHolder, this);
+        ControlPanel controlPanel = new ControlPanel(mainHolder.getTheme(), mainHolder);
         // Search panel at the top
         SearchPanel searchPanel = new SearchPanel(mainHolder.getTheme());
 
@@ -155,8 +153,5 @@ public class VicMainUI {
 
     public Holder getHolder() {
         return mainHolder;
-    }
-    public void closeApplication(){
-        frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
     }
 }

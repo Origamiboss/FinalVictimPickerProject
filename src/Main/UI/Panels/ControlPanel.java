@@ -1,15 +1,15 @@
-import Main.UI.Frames.*;
+package src.Main.UI.Panels;
 
+import Main.UI.Frames.*;
 import src.Main.UI.Format.VicFormatter;
 import src.Students.Victim;
 import src.UIElements.Buttons.RoundButton;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Colors.Images;
 import src.UIElements.Panels.RoundedPanel;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.*;
 import java.sql.Array;
 import java.util.ArrayList;
@@ -29,18 +29,12 @@ public class ControlPanel {
     private VicFormatter topPanel;
     private HashMap<String, JComponent> map;
     private src.Main.Holder holder;
-    private src.Main.VicMainUI mainGui;
 
-    private Holder holder;
-
-    public ControlPanel(CurrentUITheme theme, Holder holder) {
-
-
+    public ControlPanel(CurrentUITheme theme, src.Main.Holder holder) {
         map = new HashMap<>();
 
         //assign the main holder
         this.holder = holder;
-        mainGui = m;
 
         controlPanel = new RoundedPanel(theme);
         map.put("csButton1", controlPanel);
@@ -122,17 +116,12 @@ public class ControlPanel {
         addVictim.getComponent().addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 new AddVictimFrame(holder);
-                AddVictimPopUp();
-
             }
         });
         //Call the functions for the Delete victim button
         deleteVictim.getComponent().addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 new DeleteVictimFrame(holder);
-                DeleteVictimPopUp();
-                new DeleteVictimFrame(holder);
-
             }
         });
         //Call the functions for the Delete victim button
@@ -158,20 +147,6 @@ public class ControlPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 new ExitFrame(holder);
-                EditVictimPopUp();
-
-            }
-        });
-        //Call the edit class function
-        editClass.getComponent().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                new EditClassFrame(holder);
-        save.getComponent().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                //save data
-                holder.saveVictimData();
             }
         });
     }
