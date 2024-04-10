@@ -11,6 +11,8 @@ public class EditVictimFrame extends JFrame {
     final private JFrame self = this;
     public EditVictimFrame(src.Main.Holder h){
         holder = h;
+        //set title
+        self.setTitle("Edit Victim");
         //create the Victim Select Panel
         JPanel optionMenu = new JPanel();
         optionMenu.setPreferredSize(new Dimension(200,holder.getVictims().size() * 31));
@@ -32,7 +34,7 @@ public class EditVictimFrame extends JFrame {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(50, 30, 200, 300);
         JPanel contentPane = new JPanel(null);
-        contentPane.setPreferredSize(new Dimension(500, 400));
+        contentPane.setPreferredSize(new Dimension(300, 400));
         contentPane.add(scrollPane);
         self.setContentPane(contentPane);
         self.pack();
