@@ -4,13 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import Main.Holder;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Colors.UIColors;
 
 public class SettingsFrame extends JFrame {
     final private JFrame self = this;
-    private src.Main.Holder holder;
-    public SettingsFrame(src.Main.Holder h){
+    private Holder holder;
+    public SettingsFrame(Holder h){
         holder = h;
 
         //make the holder panel

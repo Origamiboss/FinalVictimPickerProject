@@ -1,9 +1,8 @@
-
 package src.UIElements.Panels;
 
+import UIElements.Colors.Images;
 import src.UIElements.Buttons.HeldButton;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.Images;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -51,20 +50,11 @@ public class DisplayPlayer extends HeldButton {
         g2.dispose();
     }
 
-
     public BufferedImage getImage() {
         return playerImage != null ? playerImage.getImage() : null;
     }
 
     public HeldButton getDispPanel() {
-        return this;
-    }
-}
-    public BufferedImage getImage(){
-        return this.getImage();
-    }
-
-    public HeldButton getDispPanel(){
         return this;
     }
 }

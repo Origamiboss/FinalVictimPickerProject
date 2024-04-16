@@ -1,9 +1,9 @@
 package src.Main;
 
+import UIElements.Panels.PlayerPanel;
 import src.Interfaces.Instructions;
 import src.Main.UI.Panels.PlayerDisplayPanel;
 import src.Students.Victim;
-import src.UIElements.Panels.PlayerPanel;
 
 import java.util.ArrayList;
 

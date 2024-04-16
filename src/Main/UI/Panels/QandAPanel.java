@@ -5,7 +5,6 @@ import src.Questions.Questions;
 import src.UIElements.Buttons.HeldButton;
 import src.UIElements.Buttons.RoundButton;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.Images;
 import src.UIElements.Panels.QuestionAndButton;
 import src.UIElements.Panels.RoundedPanel;
 import src.UIElements.TextCanvas;

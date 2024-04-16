@@ -1,10 +1,10 @@
 package src.Main.UI.Panels;
 
+import UIElements.Colors.Images;
 import src.Main.UI.Format.VicFormatter;
 import src.UIElements.Buttons.RoundButton;
 import src.UIElements.Buttons.RoundedButton;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.Images;
 import src.UIElements.Panels.ImagePanel;
 import src.UIElements.Panels.RoundedPanel;
 import src.UIElements.TextCanvas;

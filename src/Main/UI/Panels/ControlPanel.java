@@ -1,11 +1,11 @@
 package src.Main.UI.Panels;
 
+import Main.Holder;
 import Main.UI.Frames.*;
 import src.Main.UI.Format.VicFormatter;
 import src.Students.Victim;
 import src.UIElements.Buttons.RoundButton;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.Images;
 import src.UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
@@ -28,9 +28,9 @@ public class ControlPanel {
     private VicFormatter exit;
     private VicFormatter topPanel;
     private HashMap<String, JComponent> map;
-    private src.Main.Holder holder;
+    private Holder holder;
 
-    public ControlPanel(CurrentUITheme theme, src.Main.Holder holder) {
+    public ControlPanel(CurrentUITheme theme, Holder holder) {
         map = new HashMap<>();
 
         //assign the main holder

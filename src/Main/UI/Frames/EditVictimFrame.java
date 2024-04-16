@@ -1,5 +1,7 @@
 package Main.UI.Frames;
 
+import Main.Holder;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,9 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
 public class EditVictimFrame extends JFrame {
-    private src.Main.Holder holder;
+    private Holder holder;
     final private JFrame self = this;
-    public EditVictimFrame(src.Main.Holder h){
+    public EditVictimFrame(Holder h){
         holder = h;
         //create the Victim Select Panel
         JPanel optionMenu = new JPanel();

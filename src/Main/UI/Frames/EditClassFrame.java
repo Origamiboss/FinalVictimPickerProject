@@ -1,5 +1,7 @@
 package Main.UI.Frames;
 
+import Main.Holder;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EditClassFrame extends JFrame {
-    private src.Main.Holder holder;
+    private Holder holder;
     final private JFrame self = this;
     private HashMap<String, Integer> victimSelect;
-    public EditClassFrame(src.Main.Holder h){
+    public EditClassFrame(Holder h){
         //save data thats needed
         holder = h;
 

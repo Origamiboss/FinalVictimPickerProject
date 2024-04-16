@@ -3,6 +3,7 @@ package src.UIElements.Panels;
 import src.Main.UI.Format.VicFormatter;
 import src.Students.Victim;
 import src.UIElements.Buttons.RoundButton;
+import src.UIElements.Buttons.RoundedButton;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Colors.ImageResizer;
 import src.UIElements.Colors.Images;
@@ -10,8 +11,6 @@ import src.UIElements.Colors.Images;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-
-
 
 public class PlayerPanel extends JPanel {
     private Images image;
@@ -38,7 +37,6 @@ public class PlayerPanel extends JPanel {
         JPanel tempPanel = new JPanel();
         tempPanel.setLayout(new BorderLayout());
         //tempPanel.setLayout(new BoxLayout(tempPanel, BoxLayout.Y_AXIS));
-        tempPanel.setLayout(new BoxLayout(tempPanel, BoxLayout.Y_AXIS));
 
         imageGetter = new Images("null", theme, type);
         player = new DisplayPlayer(imageGetter, theme);
@@ -49,17 +47,12 @@ public class PlayerPanel extends JPanel {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BorderLayout());
         //buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
-        tempPanel.add(playerFormat.getPanel());
-
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
         imageGetter = new Images("dice", theme, "UIimage");
         randomize = new RoundButton(imageGetter.getImage(), theme);
         randomFormat = new VicFormatter(randomize, buffDistance);
         buttonPanel.add(randomFormat.getPanel(), BorderLayout.WEST);
         //buttonPanel.add(randomFormat.getPanel());
-        buttonPanel.add(randomFormat.getPanel());
 
         imageGetter = new Images("X", theme, "UIimage");
         remove = new RoundButton(imageGetter.getImage(), theme);
@@ -73,10 +66,6 @@ public class PlayerPanel extends JPanel {
 
         tempPanel.add(buttonPanel, BorderLayout.SOUTH);
         //tempPanel.add(buttonPanel);
-        buttonPanel.add(removeFormat.getPanel());
-        buttonPanel.setOpaque(false);
-
-        tempPanel.add(buttonPanel);
         tempPanel.setOpaque(false);
         this.add(tempPanel);
 

@@ -1,4 +1,4 @@
-package src.UIElements.Colors;
+package UIElements.Colors;
 
 import src.Main.Assets.filePaths;
 
@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileNotFoundException;
+import src.UIElements.Colors.CurrentUITheme;
 import java.io.IOException;
 
 public class Images {

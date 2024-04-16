@@ -1,7 +1,8 @@
-package src.Main;
+package Main;
 
+import Main.Holder;
 import src.Main.UI.Format.VicFormatter;
-import src.Main.UI.Panels.*;
+import src.Main.VictimPanelManager;
 import src.Students.Victim;
 import src.UIElements.Colors.CurrentUITheme;
 import src.UIElements.Panels.RoundedPanel;

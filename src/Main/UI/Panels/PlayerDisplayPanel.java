@@ -1,17 +1,14 @@
 package src.Main.UI.Panels;
 
+import UIElements.Panels.PlayerPanel;
 import com.sun.jdi.ArrayReference;
 import src.IOClasses.SimpleInstrHolder;
-import src.Interfaces.Instructions;
 import src.Interfaces.SimpleInstructions;
 import src.Main.UI.Format.VicFormatter;
 import src.Students.StudentFunctions.RandStudentSelector;
 import src.Students.Victim;
 import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Buttons.RoundedButton;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.Images;
-import src.UIElements.Panels.PlayerPanel;
 import src.UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
@@ -19,7 +16,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.stream.Collectors;
 
 public class PlayerDisplayPanel {

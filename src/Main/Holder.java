@@ -1,11 +1,12 @@
-package src.Main;
+package Main;
 
+import UIElements.Panels.PlayerPanel;
 import src.Questions.Questions;
 import src.Students.Victim;
 import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.PlayerPanel;
 import src.WriterReader.Input;
 import src.WriterReader.RandomizeImages;
+import src.Main.VictimPanelManager;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;

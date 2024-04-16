@@ -1,8 +1,7 @@
 package src.ButtonCommands;
 
-import src.Main.VictimPanelManager;
-import src.Students.Victim;
 import src.UIElements.Panels.PlayerPanel;
+import src.Students.Victim;
 
 import javax.swing.*;
 import java.util.ArrayList;

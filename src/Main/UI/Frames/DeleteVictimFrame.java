@@ -1,5 +1,7 @@
 package Main.UI.Frames;
 
+import Main.Holder;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,9 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
 public class DeleteVictimFrame extends JFrame{
-    src.Main.Holder holder;
+    Holder holder;
     JFrame self = this;
-    public DeleteVictimFrame(src.Main.Holder h) {
+    public DeleteVictimFrame(Holder h) {
         holder = h;
         //create the options panel
         JPanel optionMenu = new JPanel();

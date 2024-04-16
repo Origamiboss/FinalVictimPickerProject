@@ -1,2 +1,0 @@
-Background:gbfrontscreen
-Foreground:gbbackscreen
