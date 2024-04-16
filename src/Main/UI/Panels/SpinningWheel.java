@@ -1,6 +1,6 @@
-package src.Main.UI.Panels;
+package Main.UI.Panels;
 
-import src.UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.CurrentUITheme;
 
 import javax.swing.*;
 import java.awt.*;

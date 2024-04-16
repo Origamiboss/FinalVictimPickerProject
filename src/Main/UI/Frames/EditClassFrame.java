@@ -1,6 +1,7 @@
 package Main.UI.Frames;
 
 import Main.Holder;
+import Students.Victim;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,7 +38,7 @@ public class EditClassFrame extends JFrame {
 
         //Add the victims to the Victim Holder
         victimSelect = new HashMap<String, Integer>();
-        for(src.Students.Victim v : holder.getVictims()){
+        for(Victim v : holder.getVictims()){
             //set the hashmap to false for everyone
             String id = v.getName().getFirstName() + v.getName().getNickName() + v.getName().getLastName();
             victimSelect.put(id, 0);
@@ -175,8 +176,8 @@ public class EditClassFrame extends JFrame {
     }
 
     private void saveInformation(int points, int absents, int timespicked, int passed, int answered, int phone, int jail) {
-        ArrayList<src.Students.Victim> victimsToEdit = new ArrayList<src.Students.Victim>();
-        for (src.Students.Victim v : holder.getVictims()) {
+        ArrayList<Victim> victimsToEdit = new ArrayList<Victim>();
+        for (Victim v : holder.getVictims()) {
             String id = v.getName().getFirstName() + v.getName().getNickName() + v.getName().getLastName();
             if (victimSelect.get(id) == 1) {
                 //check to see what needs to change
@@ -194,7 +195,7 @@ public class EditClassFrame extends JFrame {
                     phone = v.getPhone();
                 if (jail < 0)
                     jail = v.getJail();
-                src.Students.Victim newGuys = new src.Students.Victim(v.getName(),
+                Victim newGuys = new Victim(v.getName(),
                         points,
                         absents,
                         timespicked,
@@ -205,7 +206,7 @@ public class EditClassFrame extends JFrame {
                 victimsToEdit.add(newGuys);
             }
         }
-        for (src.Students.Victim v : victimsToEdit) {
+        for (Victim v : victimsToEdit) {
             holder.editVictim(v);
         }
 

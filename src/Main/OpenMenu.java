@@ -1,6 +1,6 @@
-package src.Main;
+package Main;
 
-import src.Interfaces.Instructions;
+import Interfaces.Instructions;
 
 import javax.swing.*;
 

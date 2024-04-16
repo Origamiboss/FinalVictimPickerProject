@@ -1,6 +1,6 @@
-package src.WriterReader;
+package WriterReader;
 
-import src.Students.Victim;
+import Students.Victim;
 
 import java.io.File;
 import java.nio.file.Files;

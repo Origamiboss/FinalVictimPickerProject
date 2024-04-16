@@ -1,8 +1,8 @@
-package src.IOClasses;
+package IOClasses;
 
-import src.Interfaces.Instructions;
-import src.Interfaces.SimpleInstructions;
-import src.Interfaces.Trigger;
+import Interfaces.Instructions;
+import Interfaces.SimpleInstructions;
+import Interfaces.Trigger;
 
 public class SimpleInstrHolder implements Trigger {
     private SimpleInstructions instructions;

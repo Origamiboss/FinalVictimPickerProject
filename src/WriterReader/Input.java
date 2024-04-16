@@ -1,10 +1,10 @@
-package src.WriterReader;
+package WriterReader;
 
-import src.Questions.Questions;
-import src.Students.Victim;
+import Questions.Questions;
+import Students.Victim;
 //import src.Students.StudentFunctions.Names;
-import src.UIElements.Colors.CurrentUITheme;
-import src.Students.StudentFunctions.*;
+import UIElements.Colors.CurrentUITheme;
+import Students.StudentFunctions.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -73,7 +73,8 @@ public class Input {
             }
         }
         scanner.close();
-        return new CurrentUITheme(background, foreground);
+
+        return new CurrentUITheme(foreground, background);
     }
 
     public static ArrayList<Questions> readQuestionsFile(String fileName) throws FileNotFoundException {

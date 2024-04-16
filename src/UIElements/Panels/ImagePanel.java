@@ -1,6 +1,6 @@
-package src.UIElements.Panels;
+package UIElements.Panels;
 
-import src.UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.CurrentUITheme;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

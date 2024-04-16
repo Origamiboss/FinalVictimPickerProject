@@ -1,7 +1,7 @@
-package src.UIElements.Buttons;
+package UIElements.Buttons;
 
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.UIColors;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.UIColors;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -130,10 +130,10 @@ public class RoundedButton extends JButton {
         g2.fillRoundRect(inset, inset, getWidth() - inset * 2, getHeight() - inset * 2, cornerRadius, cornerRadius);
 
         // Draw image if available
-        if (image != null) {
-            int x = (getWidth() - image.getWidth(this)) / 2;
-            int y = (getHeight() - image.getHeight(this)) / 2;
-            g2.drawImage(image, x, y, this);
+        if (getImage() != null) {
+            int x = (getWidth() - getImage().getWidth(this)) / 2;
+            int y = (getHeight() - getImage().getHeight(this)) / 2;
+            g2.drawImage(getImage(), x, y, this);
         } else {
             // Draw text if no image
             super.paintComponent(g2);
@@ -144,7 +144,13 @@ public class RoundedButton extends JButton {
 
     public void setImage(Image image) {
         this.image = image;
+
+        revalidate();
         repaint();
+    }
+
+    public Image getImage(){
+        return image;
     }
 
     protected int getCornerRadius() {

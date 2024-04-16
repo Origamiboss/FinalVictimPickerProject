@@ -1,4 +1,4 @@
-package src.Interfaces;
+package Interfaces;
 
 public interface Trigger {
     void execute();

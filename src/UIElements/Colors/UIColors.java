@@ -1,4 +1,4 @@
-package src.UIElements.Colors;
+package UIElements.Colors;
 
 import java.awt.*;
 

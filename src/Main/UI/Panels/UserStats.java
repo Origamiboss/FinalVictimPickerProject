@@ -1,10 +1,10 @@
-package src.Main.UI.Panels;
+package Main.UI.Panels;
 
-import src.Main.UI.Format.VicFormatter;
-import src.Students.Victim;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.RoundedPanel;
-import src.UIElements.TextCanvas;
+import Main.UI.Format.VicFormatter;
+import Students.Victim;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Panels.RoundedPanel;
+import UIElements.TextCanvas;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

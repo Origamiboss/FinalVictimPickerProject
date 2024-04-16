@@ -1,14 +1,15 @@
-package src;
-
-import src.ButtonCommands.AddPlayerMenu;
-import src.Interfaces.SimpleInstructions;
-import src.Main.VictimPanelManager;
-import src.UIElements.Buttons.RoundButton;
+import ButtonCommands.AddPlayerMenu;
+import Interfaces.Instructions;
+import Interfaces.SimpleInstructions;
+import Main.Frontend;
+import Main.VictimPanelManager;
+import UIElements.Buttons.RoundButton;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Driver {
@@ -51,10 +52,6 @@ public class Driver {
                 }
             }
         });
-
-        //Deprecated Panels
-        //VictimPicker v = new VictimPicker();
-        //VictimGUI GUI = new VictimGUI(v);
 
     }
 }

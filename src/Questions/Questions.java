@@ -1,4 +1,4 @@
-package src.Questions;
+package Questions;
 
 public class Questions {
     private String Question;

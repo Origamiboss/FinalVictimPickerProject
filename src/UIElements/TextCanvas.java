@@ -1,8 +1,8 @@
-package src.UIElements;
+package UIElements;
 
 // Currently under construction
 
-import src.UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.CurrentUITheme;
 
 import javax.swing.*;
 import java.awt.*;

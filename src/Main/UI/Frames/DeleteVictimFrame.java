@@ -1,6 +1,7 @@
 package Main.UI.Frames;
 
 import Main.Holder;
+import Students.Victim;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,7 @@ public class DeleteVictimFrame extends JFrame{
         //create the options panel
         JPanel optionMenu = new JPanel();
         optionMenu.setPreferredSize(new Dimension(200, holder.getVictims().size() * 31));
-        for (src.Students.Victim v : holder.getVictims()) {
+        for (Victim v : holder.getVictims()) {
             String name = v.getName().getFirstName() + " " + v.getName().getLastName();
             JButton newButton = new JButton(name);
             optionMenu.add(newButton);

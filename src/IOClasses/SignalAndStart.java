@@ -1,6 +1,6 @@
-package src.IOClasses;
+package IOClasses;
 
-import src.Interfaces.Trigger;
+import Interfaces.Trigger;
 
 public class SignalAndStart implements Trigger {
     private final CompInstrHolder<?> compInstrHolder;

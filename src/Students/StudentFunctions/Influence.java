@@ -1,4 +1,4 @@
-package src.Students.StudentFunctions;
+package Students.StudentFunctions;
 
 public class Influence {
     private static final int POINTS_WEIGHT = 1;

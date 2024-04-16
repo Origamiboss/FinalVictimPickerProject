@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Main.Holder;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.UIColors;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.UIColors;
 
 public class SettingsFrame extends JFrame {
     final private JFrame self = this;

@@ -1,27 +1,29 @@
-package src.Main.UI.Panels;
+package Main.UI.Panels;
 
-import UIElements.Panels.PlayerPanel;
 import com.sun.jdi.ArrayReference;
-import src.IOClasses.SimpleInstrHolder;
-import src.Interfaces.SimpleInstructions;
-import src.Main.UI.Format.VicFormatter;
-import src.Students.StudentFunctions.RandStudentSelector;
-import src.Students.Victim;
-import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.RoundedPanel;
+import IOClasses.SimpleInstrHolder;
+import Interfaces.Instructions;
+import Interfaces.SimpleInstructions;
+import Main.UI.Format.VicFormatter;
+import Students.StudentFunctions.RandStudentSelector;
+import Students.Victim;
+import UIElements.Buttons.RoundButton;
+import UIElements.Buttons.RoundedButton;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.Images;
+import UIElements.Panels.PlayerPanel;
+import UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 
 public class PlayerDisplayPanel {
     //private RoundedPanel mainPanel;
-
-    private CurrentUserStats stats;
 
     private JPanel topPanel;
     private VicFormatter topFormat;
@@ -134,6 +136,14 @@ public class PlayerDisplayPanel {
                 randomVictim = RandStudentSelector.getRandomStudent(victims, players.stream().map(PlayerPanel::getVictim).collect(Collectors.toList()));
             } while (players.contains(randomVictim));  // Check if the randomVictim is already in the players list
             currentNewPlayer.setPlayer(randomVictim);  // Use the final reference here
+        });
+
+        RoundButton testButton = newPlayer.getTestButton();
+        testButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                newPlayer.resizeComponents(50, 50, 15, 15);
+            }
         });
 
         // Move to the next position

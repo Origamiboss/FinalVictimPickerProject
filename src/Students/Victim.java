@@ -1,6 +1,6 @@
-package src.Students;
+package Students;
 
-import src.Students.StudentFunctions.*;
+import Students.StudentFunctions.*;
 
 public class Victim {
     private int points;
@@ -22,6 +22,8 @@ public class Victim {
 
     public void setPhone(int phone) {
         this.phone += phone;
+        if (this.phone < 0)
+            this.phone = 0;
     }
 
     public int getJail() {
@@ -30,6 +32,8 @@ public class Victim {
 
     public void setJail(int jail) {
         this.jail += jail;
+        if (this.jail < 0)
+            this.jail = 0;
     }
 
     public int getAnswered(){
@@ -46,6 +50,8 @@ public class Victim {
 
     public void setPoints(int points) {
         this.points += points;
+        if (this.points < 0)
+            this.points = 0;
     }
 
     public int getAbsences() {
@@ -54,6 +60,8 @@ public class Victim {
 
     public void setAbsences(int absences) {
         this.absences += absences;
+        if (this.absences < 0)
+            this.absences = 0;
     }
 
     public int getNumPicked() {
@@ -70,6 +78,8 @@ public class Victim {
 
     public void setPassed(int passed) {
         this.passed += passed;
+        if (this.passed < 0)
+            this.passed = 0;
     }
 
     public String getImage() {

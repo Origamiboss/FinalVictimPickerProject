@@ -1,7 +1,7 @@
-package src.Main.UI.Format;
+package Main.UI.Format;
 
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.BufferedPanel;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Panels.BufferedPanel;
 
 import javax.swing.*;
 

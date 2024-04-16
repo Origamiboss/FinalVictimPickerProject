@@ -1,4 +1,4 @@
-package src.Main.Assets;
+package Main.Assets;
 
 public class filePaths {
     public static String UiImgPath = "./src/Main/Assets/UIAssets/";

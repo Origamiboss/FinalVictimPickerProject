@@ -1,8 +1,8 @@
-package src.UIElements.Panels;
+package UIElements.Panels;
 
+import UIElements.Buttons.HeldButton;
+import UIElements.Colors.CurrentUITheme;
 import UIElements.Colors.Images;
-import src.UIElements.Buttons.HeldButton;
-import src.UIElements.Colors.CurrentUITheme;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

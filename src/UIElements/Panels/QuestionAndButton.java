@@ -1,9 +1,9 @@
-package src.UIElements.Panels;
+package UIElements.Panels;
 
-import src.Main.UI.Format.VicFormatter;
-import src.UIElements.Buttons.HeldButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.TextCanvas;
+import Main.UI.Format.VicFormatter;
+import UIElements.Buttons.HeldButton;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.TextCanvas;
 
 import javax.swing.*;
 import java.awt.*;

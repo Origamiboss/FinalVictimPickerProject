@@ -1,12 +1,12 @@
-package src.UIElements.Panels;
+package UIElements.Panels;
 
-import src.Main.UI.Format.VicFormatter;
-import src.Students.Victim;
-import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Buttons.RoundedButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Colors.ImageResizer;
-import src.UIElements.Colors.Images;
+import Main.UI.Format.VicFormatter;
+import Students.Victim;
+import UIElements.Buttons.RoundButton;
+import UIElements.Buttons.RoundedButton;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.ImageResizer;
+import UIElements.Colors.Images;
 
 import javax.swing.*;
 import java.awt.*;

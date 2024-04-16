@@ -1,12 +1,12 @@
 package UIElements.Colors;
 
-import src.Main.Assets.filePaths;
+import Main.Assets.filePaths;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import src.UIElements.Colors.CurrentUITheme;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Images {
@@ -65,6 +65,10 @@ public class Images {
             e.printStackTrace();
             this.image = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
         }
+    }
+
+    public Images(BufferedImage bufImage){
+        this.image = bufImage;
     }
 
     private void processImage(Color color){

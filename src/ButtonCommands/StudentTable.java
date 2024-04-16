@@ -1,7 +1,8 @@
-package src.ButtonCommands;
+package ButtonCommands;
 
-import src.UIElements.Panels.PlayerPanel;
-import src.Students.Victim;
+import Main.VictimPanelManager;
+import Students.Victim;
+import UIElements.Panels.PlayerPanel;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -27,4 +28,3 @@ public class StudentTable {
 
 
 }
-

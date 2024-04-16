@@ -1,8 +1,8 @@
-package src.ButtonCommands;
+package ButtonCommands;
 
-import src.Interfaces.Instructions;
-import src.Students.StudentFunctions.Names;
-import src.Students.Victim;
+import Interfaces.Instructions;
+import Students.StudentFunctions.Names;
+import Students.Victim;
 
 import javax.swing.*;
 import java.awt.*;

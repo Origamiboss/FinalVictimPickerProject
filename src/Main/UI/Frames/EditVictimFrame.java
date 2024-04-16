@@ -1,6 +1,7 @@
 package Main.UI.Frames;
 
 import Main.Holder;
+import Students.Victim;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,7 @@ public class EditVictimFrame extends JFrame {
         //create the Victim Select Panel
         JPanel optionMenu = new JPanel();
         optionMenu.setPreferredSize(new Dimension(200,holder.getVictims().size() * 31));
-        for (src.Students.Victim v : holder.getVictims()) {
+        for (Victim v : holder.getVictims()) {
             String name = v.getName().getFirstName() + " " + v.getName().getLastName();
             JButton newButton = new JButton(name);
             optionMenu.add(newButton);
@@ -41,7 +42,7 @@ public class EditVictimFrame extends JFrame {
         self.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         self.setVisible(true);
     }
-    private void MakeEditScreen(src.Students.Victim v){
+    private void MakeEditScreen(Victim v){
         final JFrame victimEditor = new JFrame();
         JPanel statHolder = new JPanel();
         statHolder.setPreferredSize(new Dimension(300,300));
@@ -164,7 +165,7 @@ public class EditVictimFrame extends JFrame {
 
                 //actually save stats
                 v.getName().setNickName(Nickname.getText());
-                src.Students.Victim newGuy = new src.Students.Victim(v.getName(),
+                Victim newGuy = new Victim(v.getName(),
                         points,
                         absents,
                         timespicked,

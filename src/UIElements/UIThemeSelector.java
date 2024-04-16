@@ -1,6 +1,6 @@
-package src.UIElements;
+package UIElements;
 
-import src.UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.CurrentUITheme;
 
 public class UIThemeSelector {
 

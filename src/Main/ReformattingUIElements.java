@@ -1,11 +1,11 @@
-package src.Main;
+package Main;
 
-import src.Main.UI.Format.VicFormatter;
-import src.Students.Victim;
-import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Buttons.RoundedButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.TextCanvas;
+import Main.UI.Format.VicFormatter;
+import Students.Victim;
+import UIElements.Buttons.RoundButton;
+import UIElements.Buttons.RoundedButton;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.TextCanvas;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;

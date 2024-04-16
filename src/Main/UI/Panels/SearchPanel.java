@@ -1,13 +1,13 @@
-package src.Main.UI.Panels;
+package Main.UI.Panels;
 
+import Main.UI.Format.VicFormatter;
+import UIElements.Buttons.RoundButton;
+import UIElements.Buttons.RoundedButton;
+import UIElements.Colors.CurrentUITheme;
 import UIElements.Colors.Images;
-import src.Main.UI.Format.VicFormatter;
-import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Buttons.RoundedButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.ImagePanel;
-import src.UIElements.Panels.RoundedPanel;
-import src.UIElements.TextCanvas;
+import UIElements.Panels.ImagePanel;
+import UIElements.Panels.RoundedPanel;
+import UIElements.TextCanvas;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;

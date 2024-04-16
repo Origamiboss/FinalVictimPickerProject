@@ -1,7 +1,7 @@
-package src.WriterReader;
+package WriterReader;
 
-import src.Students.Victim;
-import src.UIElements.Colors.CurrentUITheme;
+import Students.Victim;
+import UIElements.Colors.CurrentUITheme;
 
 import java.io.FileWriter;
 import java.io.IOException;

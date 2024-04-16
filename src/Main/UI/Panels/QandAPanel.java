@@ -1,13 +1,14 @@
-package src.Main.UI.Panels;
+package Main.UI.Panels;
 
-import src.Main.UI.Format.VicFormatter;
-import src.Questions.Questions;
-import src.UIElements.Buttons.HeldButton;
-import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.QuestionAndButton;
-import src.UIElements.Panels.RoundedPanel;
-import src.UIElements.TextCanvas;
+import Main.UI.Format.VicFormatter;
+import Questions.Questions;
+import UIElements.Buttons.HeldButton;
+import UIElements.Buttons.RoundButton;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.Images;
+import UIElements.Panels.QuestionAndButton;
+import UIElements.Panels.RoundedPanel;
+import UIElements.TextCanvas;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -30,6 +31,8 @@ public class QandAPanel {
     TextCanvas questionDisplayField2;
     TextCanvas questionDisplayField3;
     TextCanvas questionDisplayField4;
+
+    private PlayerOptions.sendButtonInstruct sendButtonInstruct;
 
     RoundedPanel optionHolder; // Where the option buttons will be
 
@@ -226,55 +229,10 @@ public class QandAPanel {
         if (!answerFound) {
             System.out.println("No option selected or no correct option found.");
         }
+
+
+
     }
-
-    /*
-    private void checkAnswer(Questions currentQuestion) {
-        boolean answerChecked = false;
-        boolean correctAnswer = false;
-
-        String corAnswer = currentQuestion.getAnswer();
-
-        for (Component component : setter.getComponents()) {
-            if (component instanceof QuestionAndButton) {
-                QuestionAndButton questionAndButton = (QuestionAndButton) component;
-                HeldButton button = questionAndButton.getButton();
-
-                boolean isCorrect = questionAndButton.isCorrect(currentQuestion.getAnswer());
-
-                if (isCorrect){
-                    ((QuestionAndButton) component).getCanvas().updateColors(Color.GREEN);
-                }else if (!isCorrect){
-                    button.setBackground(Color.RED);
-                }
-
-
-                /*
-                if (button.isHeld()) {
-                    boolean isCorrect = questionAndButton.isCorrect(currentQuestion.getAnswer());
-                    answerChecked = true;
-
-                    // Update the button appearance based on whether it is correct
-                    if(isCorrect){
-
-                    }
-                    button.setBackground(isCorrect ? Color.GREEN : Color.RED);
-
-                    // Optional: display a message or update the score
-                    System.out.println("Answer is " + (isCorrect ? "correct" : "incorrect"));
-                }
-
-
-                // Reset the button state if necessary
-                button.setHeld(false);
-            }
-        }
-
-        if (!answerChecked) {
-            System.out.println("No option selected");
-        }
-    }
-    */
 
     private void displayNextQuestion() {
         if (questionsQueue.isEmpty() && displayedQuestions.isEmpty()) {

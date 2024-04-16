@@ -1,6 +1,6 @@
-package src.IOClasses;
+package IOClasses;
 
-import src.Interfaces.Instructions;
+import Interfaces.Instructions;
 
 public class CompInstrHolder<T> {
     private final T component;

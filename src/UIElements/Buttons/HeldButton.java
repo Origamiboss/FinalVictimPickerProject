@@ -1,6 +1,6 @@
-package src.UIElements.Buttons;
+package UIElements.Buttons;
 
-import src.UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.CurrentUITheme;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -99,4 +99,5 @@ public class HeldButton extends RoundButton {
 
         g2.dispose();
     }
+
 }

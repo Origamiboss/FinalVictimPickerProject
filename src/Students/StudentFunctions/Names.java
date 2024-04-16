@@ -1,4 +1,4 @@
-package src.Students.StudentFunctions;
+package Students.StudentFunctions;
 
 public class Names {
     private String firstName = "";

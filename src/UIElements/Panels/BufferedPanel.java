@@ -1,4 +1,4 @@
-package src.UIElements.Panels;
+package UIElements.Panels;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,12 +1,14 @@
 package Main;
 
+import Main.VictimPanelManager;
+import Questions.Questions;
+import Students.StudentFunctions.Names;
+import Students.Victim;
+import UIElements.Colors.CurrentUITheme;
 import UIElements.Panels.PlayerPanel;
-import src.Questions.Questions;
-import src.Students.Victim;
-import src.UIElements.Colors.CurrentUITheme;
-import src.WriterReader.Input;
-import src.WriterReader.RandomizeImages;
-import src.Main.VictimPanelManager;
+import WriterReader.Input;
+import WriterReader.Output;
+import WriterReader.RandomizeImages;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 
-import static src.Main.Assets.filePaths.*;
+import static Main.Assets.filePaths.*;
 
 public class Holder {
 
@@ -41,7 +43,7 @@ public class Holder {
 
     public void setTheme(CurrentUITheme c){
         try {
-            src.WriterReader.Output.writeUIFile(c);
+            Output.writeUIFile(c);
         }catch(IOException e){
             //error
             JPanel errorHolder = new JPanel();
@@ -97,14 +99,14 @@ public class Holder {
 
         if(names.length < 2){
             //only save one name
-            src.Students.StudentFunctions.Names n = new src.Students.StudentFunctions.Names();
+            Names n = new Names();
             n.setFirstName(names[0]);
             n.setLastName("");
             n.setNickName("");
             newGuy = new Victim(n, 0,0,0,0,0,2,2);
         }else{
             //save the first name and the very last name
-            src.Students.StudentFunctions.Names n = new src.Students.StudentFunctions.Names();
+            Names n = new Names();
             n.setFirstName(names[0]);
             n.setLastName(names[names.length - 1]);
             n.setNickName("");
@@ -114,7 +116,7 @@ public class Holder {
         //add the new victim to the file
         try {
             victims.add(newGuy);
-            src.WriterReader.Output.writeStudentFile(victims);
+            Output.writeStudentFile(victims);
         }catch(IOException e){
             //error
             JPanel errorHolder = new JPanel();
@@ -126,7 +128,7 @@ public class Holder {
         //Delete The Victim
         try{
             victims.remove(v);
-            src.WriterReader.Output.writeStudentFile(victims);
+            Output.writeStudentFile(victims);
         }catch(IOException e){
             //error
             JPanel errorHolder = new JPanel();
@@ -139,8 +141,8 @@ public class Holder {
         boolean foundTheTarget = false;
         for(Victim vic : victims){
             if(vic.getName().getFirstName() == v.getName().getFirstName() &&
-                vic.getName().getLastName() == v.getName().getLastName()){
-                 //replace the vic with v
+                    vic.getName().getLastName() == v.getName().getLastName()){
+                //replace the vic with v
                 victims.add(victims.indexOf(vic), v);
                 victims.remove(vic);
                 foundTheTarget = true;
@@ -149,7 +151,7 @@ public class Holder {
         }
         try{
             if(foundTheTarget)
-                src.WriterReader.Output.writeStudentFile(victims);
+                Output.writeStudentFile(victims);
             else
                 throw new Exception();
         }catch(ConcurrentModificationException e) {

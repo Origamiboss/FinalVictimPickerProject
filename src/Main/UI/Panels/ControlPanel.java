@@ -1,19 +1,17 @@
-package src.Main.UI.Panels;
+package Main.UI.Panels;
 
 import Main.Holder;
+import Main.UI.Format.VicFormatter;
 import Main.UI.Frames.*;
-import src.Main.UI.Format.VicFormatter;
-import src.Students.Victim;
-import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.RoundedPanel;
+import UIElements.Buttons.RoundButton;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.Images;
+import UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.HashMap;
 import java.util.Map;
 

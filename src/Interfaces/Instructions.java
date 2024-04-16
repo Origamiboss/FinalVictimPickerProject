@@ -1,6 +1,5 @@
-package src.Interfaces;
+package Interfaces;
 
-public interface Instructions<T>{
+public interface Instructions<T> {
     void update(T component);
 }
-

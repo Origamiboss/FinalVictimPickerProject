@@ -1,6 +1,6 @@
-package src.Students.StudentFunctions;
+package Students.StudentFunctions;
 
-import src.Students.Victim;
+import Students.Victim;
 
 import java.util.ArrayList;
 import java.util.List;

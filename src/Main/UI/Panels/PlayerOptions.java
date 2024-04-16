@@ -1,14 +1,15 @@
-package src.Main.UI.Panels;
+package Main.UI.Panels;
 
-import src.Interfaces.Instructions;
-import src.Main.UI.Format.VicFormatter;
-import src.Main.VictimPanelManager;
-import src.Students.Victim;
-import src.UIElements.Buttons.HeldButton;
-import src.UIElements.Buttons.RoundButton;
-import src.UIElements.Colors.CurrentUITheme;
-import src.UIElements.Panels.RoundedPanel;
-import src.UIElements.TextCanvas;
+import Interfaces.Instructions;
+import Main.UI.Format.VicFormatter;
+import Main.VictimPanelManager;
+import Students.Victim;
+import UIElements.Buttons.HeldButton;
+import UIElements.Buttons.RoundButton;
+import UIElements.Colors.CurrentUITheme;
+import UIElements.Colors.Images;
+import UIElements.Panels.RoundedPanel;
+import UIElements.TextCanvas;
 
 import javax.swing.*;
 import java.awt.*;
