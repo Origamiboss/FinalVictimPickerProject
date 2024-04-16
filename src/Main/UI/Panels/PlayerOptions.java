@@ -2,6 +2,7 @@ package Main.UI.Panels;
 
 import Interfaces.Instructions;
 import Main.UI.Format.VicFormatter;
+import Main.UI.Frames.ErrorMessageFrame;
 import Main.VictimPanelManager;
 import Students.Victim;
 import UIElements.Buttons.HeldButton;
@@ -151,6 +152,12 @@ public class PlayerOptions {
         sendButton.getComponent().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+
+                if (textPNL.getText().equals("")) //Empty text so don't send anything
+                    return;
+
+                if (textPNL.getText().equals("5")) //testing error message
+                    new ErrorMessageFrame("Text equals 5");
 
                 sendButtonInstruct.update(manager);
 
