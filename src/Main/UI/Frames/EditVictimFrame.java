@@ -2,6 +2,9 @@ package Main.UI.Frames;
 
 import Main.Holder;
 import Students.Victim;
+import UIElements.Buttons.RoundButton;
+import UIElements.Buttons.RoundedButton;
+import UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,11 +18,11 @@ public class EditVictimFrame extends JFrame {
     public EditVictimFrame(Holder h){
         holder = h;
         //create the Victim Select Panel
-        JPanel optionMenu = new JPanel();
+        RoundedPanel optionMenu = new RoundedPanel(holder.getTheme());
         optionMenu.setPreferredSize(new Dimension(200,holder.getVictims().size() * 31));
         for (Victim v : holder.getVictims()) {
             String name = v.getName().getFirstName() + " " + v.getName().getLastName();
-            JButton newButton = new JButton(name);
+            RoundedButton newButton = new RoundedButton(name, holder.getTheme());
             optionMenu.add(newButton);
             newButton.addActionListener(new ActionListener() {
                 @Override
@@ -34,7 +37,7 @@ public class EditVictimFrame extends JFrame {
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(50, 30, 200, 300);
-        JPanel contentPane = new JPanel(null);
+        RoundedPanel contentPane = new RoundedPanel(holder.getTheme());
         contentPane.setPreferredSize(new Dimension(500, 400));
         contentPane.add(scrollPane);
         self.setContentPane(contentPane);
@@ -44,7 +47,7 @@ public class EditVictimFrame extends JFrame {
     }
     private void MakeEditScreen(Victim v){
         final JFrame victimEditor = new JFrame();
-        JPanel statHolder = new JPanel();
+        RoundedPanel statHolder = new RoundedPanel(holder.getTheme());
         statHolder.setPreferredSize(new Dimension(300,300));
         victimEditor.add(statHolder);
         //Create the name Holder
@@ -53,7 +56,7 @@ public class EditVictimFrame extends JFrame {
 
         //create the stat holders and editors
         //Put them into their own panel so they stay together by using a pointer
-        JPanel tempHolder = new JPanel();
+        RoundedPanel tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Nickname:"));
         JTextField Nickname = new JTextField();
@@ -62,7 +65,7 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(Nickname);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Times Picked:"));
         JTextField TimesPicked = new JTextField();
@@ -71,7 +74,7 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(TimesPicked);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Points:"));
         JTextField Points = new JTextField();
@@ -80,7 +83,7 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(Points);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Absents:"));
         JTextField Absents = new JTextField();
@@ -89,7 +92,7 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(Absents);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Answered:"));
         JTextField Answered = new JTextField();
@@ -98,7 +101,7 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(Answered);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Passed:"));
         JTextField Passed = new JTextField();
@@ -107,7 +110,7 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(Passed);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Phone:"));
         JTextField Phone = new JTextField();
@@ -116,7 +119,7 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(Phone);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(holder.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,25));
         tempHolder.add(new JLabel("Jail:"));
         JTextField Jail = new JTextField();
@@ -125,8 +128,8 @@ public class EditVictimFrame extends JFrame {
         tempHolder.add(Jail);
         statHolder.add(tempHolder);
 
-
-        JButton saveButton = new JButton("Save Stats");
+        String saveStats = "Save Stats";
+        RoundButton saveButton = new RoundButton(saveStats, holder.getTheme());
         statHolder.add(saveButton);
         saveButton.addActionListener(new ActionListener() {
             @Override
