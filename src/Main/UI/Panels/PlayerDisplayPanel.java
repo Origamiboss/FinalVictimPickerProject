@@ -1,5 +1,6 @@
 package Main.UI.Panels;
 
+import Main.Holder;
 import Main.UI.Frames.ErrorMessageFrame;
 import com.sun.jdi.ArrayReference;
 import IOClasses.SimpleInstrHolder;
@@ -64,7 +65,10 @@ public class PlayerDisplayPanel {
     private int panelWidth = 900;
     private int panelHeight = 250;
 
-    public PlayerDisplayPanel(CurrentUITheme thatTheme, ArrayList<Victim> inVic) {
+    Holder holder;
+
+    public PlayerDisplayPanel(CurrentUITheme thatTheme, ArrayList<Victim> inVic, Holder h) {
+        holder = h;
         victims = inVic;
         theme = thatTheme;
         grid = new GridBagConstraints();
@@ -109,7 +113,7 @@ public class PlayerDisplayPanel {
 
     public void addPlayerPanel() {
         if (players.size() >= 15) {
-            new ErrorMessageFrame("Player limit reached.");
+            new ErrorMessageFrame("Player limit reached.", holder);
             return;
         }
 

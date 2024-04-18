@@ -62,7 +62,7 @@ import java.util.HashMap;
             playerOptionsHolder.setBackground(mainHolder.getTheme().getCurrentBackgroundColor().main());
 
             // Panel for displaying players
-            PlayerDisplayPanel playerDisplayPanel = new PlayerDisplayPanel(mainHolder.getTheme(), mainHolder.getVictims());
+            PlayerDisplayPanel playerDisplayPanel = new PlayerDisplayPanel(mainHolder.getTheme(), mainHolder.getVictims(), mainHolder);
             JPanel playerDisplayTopPanel = new JPanel();
             playerDisplayTopPanel.setBackground(null);
             playerDisplayTopPanel.add(playerDisplayPanel.getTopPanel());  // Add top panel of player display
@@ -72,7 +72,7 @@ import java.util.HashMap;
             mainHolder.setManagaer(manager);
 
             // Panel for player options
-            PlayerOptions playerOptions = new PlayerOptions(mainHolder.getTheme(), manager);
+            PlayerOptions playerOptions = new PlayerOptions(mainHolder.getTheme(), manager, mainHolder);
             JPanel playerOptionsPanel = new JPanel();
             playerOptionsPanel.setBackground(null);
             playerOptionsPanel.setOpaque(false);
