@@ -3,6 +3,7 @@ package Main.UI.Frames;
 import Main.Holder;
 import Main.UI.Format.VicFormatter;
 import UIElements.Buttons.RoundButton;
+import UIElements.Buttons.RoundedButton;
 import UIElements.Panels.RoundedPanel;
 import UIElements.TextCanvas;
 
@@ -36,7 +37,7 @@ public class ErrorMessageFrame extends JFrame {
         label.setForeground(holder.getTheme().getCurrentForegroundColor().main());
         errorMenu.add(labelFormat.getPanel());
 
-        RoundButton okButton = new RoundButton("Ok", holder.getTheme());
+        RoundedButton okButton = new RoundedButton("Ok", holder.getTheme());
 
         VicFormatter canvasFormat = new VicFormatter(okButton, 5);
         canvasFormat.getPanel().setSize(30, 20);
@@ -44,9 +45,7 @@ public class ErrorMessageFrame extends JFrame {
         okButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
-                remove(self);
-
+                self.dispose();
             }
         });
 
