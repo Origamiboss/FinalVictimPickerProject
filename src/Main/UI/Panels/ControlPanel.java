@@ -88,7 +88,7 @@ public class ControlPanel {
         //Reset Button
         imageGetter = new Images("dice", theme, "UIimage");
         RoundButton res = new RoundButton(imageGetter.getImage(), theme);
-        ext.setToolTipText("Exit");
+        res.setToolTipText("Reset All Players");
         map.put("csButton9", res);
         reset = new VicFormatter(res, buffDistance);
 
