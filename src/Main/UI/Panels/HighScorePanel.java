@@ -1,16 +1,24 @@
 package Main.UI.Panels;
 
+import Main.Holder;
 import Main.UI.Format.VicFormatter;
+import Main.UI.HighScore;
+import Main.VicMainUI;
+import Students.Victim;
 import UIElements.Colors.CurrentUITheme;
 import UIElements.Panels.RoundedPanel;
 import UIElements.TextCanvas;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HighScorePanel {
+public class HighScorePanel
+{
+
+    ArrayList<Victim> victim;
     private HashMap<String, JComponent> map;
     private CurrentUITheme theme;
 
@@ -40,7 +48,14 @@ public class HighScorePanel {
 
     private TextCanvas Highscores;
 
-    public HighScorePanel(CurrentUITheme theme){
+    HighScore highscore;
+
+    ArrayList<Victim> topScores = new ArrayList<>();
+
+    int counter = 0;
+
+    public HighScorePanel(CurrentUITheme theme)
+    {
         map = new HashMap<>();
 
         int buffDistance = 5;
@@ -88,7 +103,7 @@ public class HighScorePanel {
         panel1Form.getPanel().setBackground(theme.getCurrentBackgroundColor().main());
         panel1.add(panel1Form.getPanel());
         panel1.add(No1);
-        No1.setText("Test1");
+        No1.setText("No Scores Yet");
         panel1.setSize(new Dimension(700, 10));
         No1Form = new VicFormatter(panel1, 2);
         map.put("hsTextPane1", No1);
@@ -99,7 +114,9 @@ public class HighScorePanel {
         VicFormatter panel2Form = new VicFormatter(No2Lbl, 5);
         panel2.add(panel2Form.getPanel());
         panel2.add(No2);
-        No2.setText("Test2");
+
+        No2.setText("No Scores Yet");
+
         panel2.setSize(new Dimension(700, 10));
         No2Form = new VicFormatter(panel2, 2);
         map.put("hsTextPane2", No2);
@@ -110,7 +127,9 @@ public class HighScorePanel {
         VicFormatter panel3Form = new VicFormatter(No3Lbl, 5);
         panel3.add(panel3Form.getPanel());
         panel3.add(No3);
-        No3.setText("Test3");
+
+        No3.setText("No Scores Yet");
+
         panel3.setSize(new Dimension(700, 10));
         No3Form = new VicFormatter(panel3, 2);
         map.put("hsTextPane3", No3);
@@ -121,7 +140,9 @@ public class HighScorePanel {
         VicFormatter panel4Form = new VicFormatter(No4Lbl, 5);
         panel4.add(panel4Form.getPanel());
         panel4.add(No4);
-        No4.setText("Test4");
+
+        No4.setText("No Scores Yet");
+
         panel4.setSize(new Dimension(700, 10));
         No4Form = new VicFormatter(panel4, 2);
         map.put("hsTextPane4", No4);
@@ -132,7 +153,9 @@ public class HighScorePanel {
         VicFormatter panel5Form = new VicFormatter(No5Lbl, 5);
         panel5.add(panel5Form.getPanel());
         panel5.add(No5);
-        No5.setText("Test5");
+
+        No5.setText("No Scores Yet");
+
         panel5.setSize(new Dimension(700, 10));
         No5Form = new VicFormatter(panel5, 2);
         map.put("hsTextPane5", No5);
@@ -174,10 +197,75 @@ public class HighScorePanel {
 
     }
 
+    public void updatePanel(ArrayList<Victim> victimsTopScores)
+    {
+        topScores = victimsTopScores;
+        redrawTextCavas();
+    }
+
+    public void redrawTextCavas()
+    {
+        if(topScores != null && topScores.size() > 0)
+        {
+            String no1 = topScores.get(0).getFullName() + " - " + topScores.get(0).getPoints();
+            No1.setText(no1);
+            System.out.println(no1);
+        }
+        else
+        {
+            No1.setText("No Scores Yet");
+        }
+
+        if(topScores != null && topScores.size() > 1)
+        {
+            String no2 = topScores.get(1).getFullName()  + " - " + topScores.get(1).getPoints();
+            No2.setText(no2);
+            System.out.println(no2);
+        }
+        else
+        {
+            No2.setText("No Scores Yet");
+        }
+
+        if(topScores != null && topScores.size() > 2)
+        {
+            String no3 = topScores.get(2).getFullName()  + " - " + topScores.get(2).getPoints();
+            No3.setText(no3);
+            System.out.println(no3);
+        }
+        else
+        {
+            No3.setText("No Scores Yet");
+        }
+
+        if(topScores != null && topScores.size() > 3)
+        {
+            String no4 = topScores.get(3).getFullName()  + " - " + topScores.get(3).getPoints();
+            No4.setText(no4);
+            System.out.println(no4);
+        }
+        else
+        {
+            No4.setText("No Scores Yet");
+        }
+
+        if(topScores != null && topScores.size() > 4)
+        {
+            String no5 = topScores.get(4).getFullName()  + " - " + topScores.get(4).getPoints();
+            No5.setText(no5);
+            System.out.println(no5);
+        }
+        else
+        {
+            No5.setText("No Scores Yet");
+        }
+    }
+
     public JPanel getFormat() { return scoreFormat.getPanel(); }
 
     public Map<String, JComponent> getMap(){
         return map;
     }
+
 
 }

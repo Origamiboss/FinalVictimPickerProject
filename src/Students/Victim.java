@@ -2,7 +2,11 @@ package Students;
 
 import Students.StudentFunctions.*;
 
+import java.util.ArrayList;
+
 public class Victim {
+
+    private ArrayList<Victim> victimStored = new ArrayList<Victim>();
     private int points;
     private int absences;
     private int numPicked;
@@ -54,6 +58,10 @@ public class Victim {
             this.points = 0;
     }
 
+    public void resetPoints(){
+        this.points = 0;
+    }
+
     public int getAbsences() {
         return absences;
     }
@@ -94,6 +102,15 @@ public class Victim {
         return name;
     }
 
+    public String getFullName()
+    {
+        return name.getFirstName() + " " + name.getLastName();
+    }
+
+    public String getNickName()
+    {
+        return name.getNickName();
+    }
     public void setName(Names name) {
         this.name = name;
     }
@@ -125,4 +142,5 @@ public class Victim {
         this.infPoints = Influence.getInfluence(points, absences, passed, answered, numPicked);
         return infPoints;
     }
+
 }

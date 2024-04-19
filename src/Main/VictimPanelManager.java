@@ -1,6 +1,7 @@
 package Main;
 
 import Interfaces.Instructions;
+import Main.UI.Panels.HighScorePanel;
 import Main.UI.Panels.PlayerDisplayPanel;
 import Students.Victim;
 import UIElements.Panels.PlayerPanel;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 public class VictimPanelManager {
     private ArrayList<PlayerPanel> victims;
     private PlayerDisplayPanel displayPanel;
+
 
     public VictimPanelManager(PlayerDisplayPanel displayPanel){
         this.displayPanel = displayPanel;

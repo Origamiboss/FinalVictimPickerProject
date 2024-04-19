@@ -1,6 +1,7 @@
 package Main;
 
 import Main.UI.Format.VicFormatter;
+import Main.UI.HighScore;
 import Main.UI.Panels.*;
 import Students.Victim;
 import UIElements.Colors.CurrentUITheme;
@@ -73,6 +74,7 @@ import java.util.HashMap;
 
             // Panel for player options
             PlayerOptions playerOptions = new PlayerOptions(mainHolder.getTheme(), manager);
+
             JPanel playerOptionsPanel = new JPanel();
             playerOptionsPanel.setBackground(null);
             playerOptionsPanel.setOpaque(false);
@@ -120,6 +122,11 @@ import java.util.HashMap;
             highScoreAndQuestionPanel.add(highScorePanel.getFormat(), BorderLayout.CENTER);  // Add high score panel in the center
             highScorePanel.getFormat().setPreferredSize(new Dimension(800, 100));
             highScoreAndQuestionPanel.setBackground(null);
+
+            HighScore highScore = new HighScore();
+
+            PlayerOptions.currentHighScorePanel(highScorePanel, highScore); // Passing the highscore panel to the player options
+            Holder.currentHighScorePanel(highScorePanel, highScore); // Passing the highscore panel to the holder
 
             contentPanel.add(highScoreAndQuestionPanel);  // Add high score and question panel to the content panel
             VicFormatter contentFormatter = new VicFormatter(contentPanel, 5);
