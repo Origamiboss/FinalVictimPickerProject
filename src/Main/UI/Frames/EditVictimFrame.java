@@ -1,6 +1,7 @@
 package Main.UI.Frames;
 
 import Main.Holder;
+import Main.UI.Format.VicFormatter;
 import Students.Victim;
 import UIElements.Buttons.RoundButton;
 import UIElements.Buttons.RoundedButton;
@@ -22,7 +23,10 @@ public class EditVictimFrame extends JFrame {
         optionMenu.setPreferredSize(new Dimension(200,holder.getVictims().size() * 31));
         for (Victim v : holder.getVictims()) {
             String name = v.getName().getFirstName() + " " + v.getName().getLastName();
-            RoundedButton newButton = new RoundedButton(name, holder.getTheme());
+            RoundButton newButton = new RoundButton(name, holder.getTheme());
+            newButton.setSize(new Dimension(300, 50));
+            VicFormatter buttonForm = new VicFormatter(newButton, 5);
+            optionMenu.add(buttonForm.getPanel());
             optionMenu.add(newButton);
             newButton.addActionListener(new ActionListener() {
                 @Override
@@ -44,6 +48,8 @@ public class EditVictimFrame extends JFrame {
         self.pack();
         self.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         self.setVisible(true);
+
+
     }
     private void MakeEditScreen(Victim v){
         final JFrame victimEditor = new JFrame();
