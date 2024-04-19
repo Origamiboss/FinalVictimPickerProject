@@ -71,6 +71,13 @@ public class Holder {
     }
 
     public void saveStudents(){
+        try {
+            Output.writeStudentFile(victims);
+        }catch(IOException e){
+            //error
+            JPanel errorHolder = new JPanel();
+            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
+        }
     }
 
     public void setManagaer(VictimPanelManager inManager){
@@ -114,58 +121,31 @@ public class Holder {
         }
 
         //add the new victim to the file
-        try {
-            victims.add(newGuy);
-            Output.writeStudentFile(victims);
-        }catch(IOException e){
-            //error
-            JPanel errorHolder = new JPanel();
-            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
-        }
+        victims.add(newGuy);
     }
 
     public void deleteVictim(Victim v){
         //Delete The Victim
-        try{
-            victims.remove(v);
-            Output.writeStudentFile(victims);
-        }catch(IOException e){
-            //error
-            JPanel errorHolder = new JPanel();
-            JOptionPane.showConfirmDialog(errorHolder,"ERROR: File Not Found");
-        }
+        victims.remove(v);
     }
     public void editVictim(Victim v){
         //Update
         //Find the victim with the same name
-        boolean foundTheTarget = false;
         for(Victim vic : victims){
             if(vic.getName().getFirstName() == v.getName().getFirstName() &&
                     vic.getName().getLastName() == v.getName().getLastName()){
                 //replace the vic with v
                 victims.add(victims.indexOf(vic), v);
                 victims.remove(vic);
-                foundTheTarget = true;
                 break;
             }
         }
-        try{
-            if(foundTheTarget)
-                Output.writeStudentFile(victims);
-            else
-                throw new Exception();
-        }catch(ConcurrentModificationException e) {
-            //error because two things are editing at the same time
-            JPanel errorHolder = new JPanel();
-            JOptionPane.showMessageDialog(errorHolder,"ERROR: File in use.");
-        }catch (IOException e){
-            //error
-            JPanel errorHolder = new JPanel();
-            JOptionPane.showMessageDialog(errorHolder,"ERROR: File Not Found");
-        }catch(Exception e){
-            //error
-            JPanel errorHolder = new JPanel();
-            JOptionPane.showMessageDialog(errorHolder,"ERROR: Updated Victim Not Found");
+
+    }
+    public void resetStudents(){
+        //resets all of the students to their base stats
+        for(Victim v: victims){
+            v.resetStats(0,0,0,0,0,2,2);
         }
     }
 

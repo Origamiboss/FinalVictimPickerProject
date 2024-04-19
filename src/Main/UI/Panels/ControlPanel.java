@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +25,7 @@ public class ControlPanel {
     private VicFormatter settings;
     private VicFormatter save;
     private VicFormatter exit;
+    private VicFormatter reset;
     private VicFormatter topPanel;
     private HashMap<String, JComponent> map;
     private Holder holder;
@@ -83,6 +85,13 @@ public class ControlPanel {
         map.put("csButton8", ext);
         exit = new VicFormatter(ext, buffDistance);
 
+        //Reset Button
+        imageGetter = new Images("dice", theme, "UIimage");
+        RoundButton res = new RoundButton(imageGetter.getImage(), theme);
+        ext.setToolTipText("Exit");
+        map.put("csButton9", res);
+        reset = new VicFormatter(res, buffDistance);
+
         JPanel test = new JPanel();
         test.setPreferredSize(new Dimension(0, 500));
         //test.setMinimumSize(new Dimension(1, 200));
@@ -94,6 +103,7 @@ public class ControlPanel {
         controlPanel.add(editVictim.getPanel());
         controlPanel.add(editClass.getPanel());
         controlPanel.add(settings.getPanel());
+        controlPanel.add(reset.getPanel());
         controlPanel.add(test);
         controlPanel.add(Box.createRigidArea(new Dimension(1, 10)));
         //controlPanel.add(testBox.getPanel());
@@ -147,6 +157,19 @@ public class ControlPanel {
                 new ExitFrame(holder);
             }
         });
+        save.getComponent().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                holder.saveStudents();
+            }
+        });
+        reset.getComponent().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                holder.resetStudents();
+            }
+        });
+
     }
 
     public JPanel getFormat() {

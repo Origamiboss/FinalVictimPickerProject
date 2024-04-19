@@ -125,4 +125,13 @@ public class Victim {
         this.infPoints = Influence.getInfluence(points, absences, passed, answered, numPicked);
         return infPoints;
     }
+    public void resetStats(int points, int absences, int passed, int answered, int numPicked, int phone, int jail){
+        this.points = points;
+        this.absences = absences;
+        this.passed = passed;
+        this.answered = answered;
+        this.numPicked = numPicked;
+        this.phone = phone;
+        this.jail = jail;
+    }
 }
