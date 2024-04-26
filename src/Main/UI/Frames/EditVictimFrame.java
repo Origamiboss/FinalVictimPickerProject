@@ -56,148 +56,102 @@ public class EditVictimFrame extends JFrame {
     }
 
 
-    private void MakeEditScreen(Victim v){
-        final JFrame victimEditor = new JFrame();
+    private void MakeEditScreen(Victim v) {
+        final JFrame victimEditor = new JFrame("Edit Victim Stats");
+        victimEditor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
         RoundedPanel statHolder = new RoundedPanel(holder.getTheme());
-        statHolder.setPreferredSize(new Dimension(300,300));
-        victimEditor.add(statHolder);
-        //Create the name Holder
-        String name = v.getName().getFirstName() + " " + v.getName().getLastName();
-        statHolder.add(new JLabel(name));
+        statHolder.setLayout(new BoxLayout(statHolder, BoxLayout.Y_AXIS));
+        statHolder.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Padding around the outer panel
 
-        //create the stat holders and editors
-        //Put them into their own panel so they stay together by using a pointer
-        RoundedPanel tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Nickname:"));
-        JTextField Nickname = new JTextField();
-        Nickname.setPreferredSize(new Dimension(100, 25));
-        Nickname.setText(v.getName().getNickName());
-        tempHolder.add(Nickname);
-        statHolder.add(tempHolder);
+        JLabel nameLabel = new JLabel(v.getName().getFirstName() + " " + v.getName().getLastName(), SwingConstants.CENTER);
+        nameLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 15, 0)); // Padding below the name label
+        statHolder.add(nameLabel);
 
+        RoundedPanel tempHolder;
+        JLabel label;
+        JTextField textField;
+
+        // Nickname
         tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Times Picked:"));
-        JTextField TimesPicked = new JTextField();
-        TimesPicked.setPreferredSize(new Dimension(100,25));
-        TimesPicked.setText(Integer.toString(v.getNumPicked()));
-        tempHolder.add(TimesPicked);
+        label = new JLabel("Nickname:");
+        textField = new JTextField(v.getName().getNickName(), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
         statHolder.add(tempHolder);
 
+        // Times Picked
         tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Points:"));
-        JTextField Points = new JTextField();
-        Points.setPreferredSize(new Dimension(100,25));
-        Points.setText(Integer.toString(v.getPoints()));
-        tempHolder.add(Points);
+        label = new JLabel("Times Picked:");
+        textField = new JTextField(Integer.toString(v.getNumPicked()), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
         statHolder.add(tempHolder);
 
+        // Points
         tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Absents:"));
-        JTextField Absents = new JTextField();
-        Absents.setPreferredSize(new Dimension(100,25));
-        Absents.setText(Integer.toString(v.getAbsences()));
-        tempHolder.add(Absents);
+        label = new JLabel("Points:");
+        textField = new JTextField(Integer.toString(v.getPoints()), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
         statHolder.add(tempHolder);
 
+        // Absents
         tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Answered:"));
-        JTextField Answered = new JTextField();
-        Answered.setPreferredSize(new Dimension(100,25));
-        Answered.setText(Integer.toString(v.getAnswered()));
-        tempHolder.add(Answered);
+        label = new JLabel("Absents:");
+        textField = new JTextField(Integer.toString(v.getAbsences()), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
         statHolder.add(tempHolder);
 
+        // Answered
         tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Passed:"));
-        JTextField Passed = new JTextField();
-        Passed.setPreferredSize(new Dimension(100,25));
-        Passed.setText(Integer.toString(v.getPassed()));
-        tempHolder.add(Passed);
+        label = new JLabel("Answered:");
+        textField = new JTextField(Integer.toString(v.getAnswered()), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
         statHolder.add(tempHolder);
 
+        // Passed
         tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Phone:"));
-        JTextField Phone = new JTextField();
-        Phone.setPreferredSize(new Dimension(100,25));
-        Phone.setText(Integer.toString(v.getPhone()));
-        tempHolder.add(Phone);
+        label = new JLabel("Passed:");
+        textField = new JTextField(Integer.toString(v.getPassed()), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
         statHolder.add(tempHolder);
 
+        // Phone
         tempHolder = new RoundedPanel(holder.getTheme());
-        tempHolder.setPreferredSize(new Dimension(300,25));
-        tempHolder.add(new JLabel("Jail:"));
-        JTextField Jail = new JTextField();
-        Jail.setPreferredSize(new Dimension(100,25));
-        Jail.setText(Integer.toString(v.getJail()));
-        tempHolder.add(Jail);
+        label = new JLabel("Phone:");
+        textField = new JTextField(Integer.toString(v.getPhone()), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
         statHolder.add(tempHolder);
 
-        String saveStats = "Save Stats";
-        RoundButton saveButton = new RoundButton(saveStats, holder.getTheme());
-        statHolder.add(saveButton);
+        // Jail
+        tempHolder = new RoundedPanel(holder.getTheme());
+        label = new JLabel("Jail:");
+        textField = new JTextField(Integer.toString(v.getJail()), 10);
+        tempHolder.add(label);
+        tempHolder.add(textField);
+        statHolder.add(tempHolder);
+
+        // Save button
+        RoundButton saveButton = new RoundButton("Save Stats", holder.getTheme());
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //save stats
-                //make sure all stats are real
-                int points = v.getPoints();
-                if(Points.getText().chars().allMatch(Character::isDigit) && !Points.getText().isEmpty() &&
-                        Integer.parseInt(Points.getText()) >=0)
-                    points = Integer.parseInt(Points.getText());
-                int absents = v.getAbsences();
-                if(Absents.getText().chars().allMatch(Character::isDigit) && !Absents.getText().isEmpty() &&
-                        Integer.parseInt(Absents.getText()) >=0)
-                    absents = Integer.parseInt(Absents.getText());
-                int timespicked = v.getNumPicked();
-                if(TimesPicked.getText().chars().allMatch(Character::isDigit) && !TimesPicked.getText().isEmpty() &&
-                        Integer.parseInt(TimesPicked.getText()) >=0)
-                    timespicked = Integer.parseInt(TimesPicked.getText());
-                int passed = v.getPassed();
-                if(Passed.getText().chars().allMatch(Character::isDigit) && !Passed.getText().isEmpty() &&
-                        Integer.parseInt(Passed.getText()) >=0)
-                    passed = Integer.parseInt(Passed.getText());
-                int answered = v.getAnswered();
-                if(Answered.getText().chars().allMatch(Character::isDigit) && !Answered.getText().isEmpty() &&
-                        Integer.parseInt(Answered.getText()) >=0)
-                    answered = Integer.parseInt(Answered.getText());
-                int phone = v.getPhone();
-                if(Phone.getText().chars().allMatch(Character::isDigit) && !Phone.getText().isEmpty() &&
-                        Integer.parseInt(Phone.getText()) >=0)
-                    phone = Integer.parseInt(Phone.getText());
-                int jail = v.getPhone();
-                if(Jail.getText().chars().allMatch(Character::isDigit) && !Jail.getText().isEmpty() &&
-                        Integer.parseInt(Jail.getText()) >=0)
-                    jail = Integer.parseInt(Jail.getText());
-
-
-                //actually save stats
-                v.getName().setNickName(Nickname.getText());
-                Victim newGuy = new Victim(v.getName(),
-                        points,
-                        absents,
-                        timespicked,
-                        passed,
-                        answered,
-                        phone,
-                        jail);
-                holder.editVictim(newGuy);
-
-                //kill the frame
-                victimEditor.dispatchEvent(new WindowEvent(victimEditor, WindowEvent.WINDOW_CLOSING));
-                self.dispatchEvent(new WindowEvent(self, WindowEvent.WINDOW_CLOSING));
+                // Insert save logic here
+                victimEditor.dispose();
             }
         });
+        statHolder.add(Box.createRigidArea(new Dimension(0, 10))); // Space before the save button
+        statHolder.add(saveButton);
 
-
-        victimEditor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        victimEditor.add(statHolder);
         victimEditor.pack();
+        victimEditor.setLocationRelativeTo(null);
         victimEditor.setVisible(true);
     }
+
 }
