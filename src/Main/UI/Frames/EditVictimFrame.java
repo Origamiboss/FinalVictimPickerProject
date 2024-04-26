@@ -16,41 +16,46 @@ import java.awt.event.WindowEvent;
 public class EditVictimFrame extends JFrame {
     private Holder holder;
     final private JFrame self = this;
-    public EditVictimFrame(Holder h){
+    public EditVictimFrame(Holder h) {
         holder = h;
-        //create the Victim Select Panel
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setTitle("Edit Victim");
+
+        // Use a custom panel with BoxLayout for vertical stacking of buttons
         RoundedPanel optionMenu = new RoundedPanel(holder.getTheme());
-        optionMenu.setPreferredSize(new Dimension(200,holder.getVictims().size() * 31));
-        for (Victim v : holder.getVictims()) {
+        optionMenu.setLayout(new BoxLayout(optionMenu, BoxLayout.Y_AXIS));
+        optionMenu.setPreferredSize(new Dimension(250, holder.getVictims().size() * 60)); // Increase initial width
+
+        for (int i = 0; i < holder.getVictims().size(); i++) {
+            Victim v = holder.getVictims().get(i);
             String name = v.getName().getFirstName() + " " + v.getName().getLastName();
             RoundButton newButton = new RoundButton(name, holder.getTheme());
-            newButton.setSize(new Dimension(300, 50));
-            VicFormatter buttonForm = new VicFormatter(newButton, 5);
-            optionMenu.add(buttonForm.getPanel());
+            newButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Align buttons
             optionMenu.add(newButton);
-            newButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    //create the Panel to Edit that specific victim
-                    MakeEditScreen(v);
-                }
-            });
+            newButton.addActionListener(e -> MakeEditScreen(v));
 
+            if (i < holder.getVictims().size() - 1) {
+                // Adds space between buttons
+                optionMenu.add(Box.createRigidArea(new Dimension(0, 10))); // Adds 10 pixels space between buttons
+            }
         }
+
+        // JScrollPane setup
         JScrollPane scrollPane = new JScrollPane(optionMenu);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setBounds(50, 30, 200, 300);
+
+        // Content Pane setup with a custom rounded panel
         RoundedPanel contentPane = new RoundedPanel(holder.getTheme());
-        contentPane.setPreferredSize(new Dimension(500, 400));
-        contentPane.add(scrollPane);
-        self.setContentPane(contentPane);
-        self.pack();
-        self.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        self.setVisible(true);
+        contentPane.setLayout(new BorderLayout());
+        contentPane.add(scrollPane, BorderLayout.CENTER);
 
-
+        this.setContentPane(contentPane);
+        this.pack();
+        this.setVisible(true);
     }
+
+
     private void MakeEditScreen(Victim v){
         final JFrame victimEditor = new JFrame();
         RoundedPanel statHolder = new RoundedPanel(holder.getTheme());
