@@ -23,24 +23,24 @@ Jail:2
 First name:Nate
 Last name:Benson
 Nickname:
-Points:15
-Absents:4
-Answered:5
-Times Picked:4
-Passed:4
-Phone:4
-Jail:2
-
-First name:Nate
-Last name:Bittle
-Nickname:Justin
 Points:0
 Absents:0
 Answered:0
 Times Picked:0
-Passed:23
+Passed:0
 Phone:2
 Jail:2
+
+First name:Nate
+Last name:Bittle
+Nickname:
+Points:0
+Absents:0
+Answered:0
+Times Picked:0
+Passed:0
+Phone:0
+Jail:0
 
 First name:Excalibur
 Last name:Bunker
