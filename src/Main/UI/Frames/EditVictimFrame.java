@@ -81,59 +81,66 @@ public class EditVictimFrame extends JFrame {
         statHolder.add(tempHolder);
 
         // Times Picked
+        JTextField pickedField;
         tempHolder = new RoundedPanel(holder.getTheme());
         label = new JLabel("Times Picked:");
-        textField = new JTextField(Integer.toString(v.getNumPicked()), 10);
+        pickedField = new JTextField(Integer.toString(v.getNumPicked()), 10);
         tempHolder.add(label);
-        tempHolder.add(textField);
+        tempHolder.add(pickedField);
         statHolder.add(tempHolder);
 
         // Points
+        JTextField pointsField;
         tempHolder = new RoundedPanel(holder.getTheme());
         label = new JLabel("Points:");
-        textField = new JTextField(Integer.toString(v.getPoints()), 10);
+        pointsField = new JTextField(Integer.toString(v.getPoints()), 10);
         tempHolder.add(label);
-        tempHolder.add(textField);
+        tempHolder.add(pointsField);
         statHolder.add(tempHolder);
 
         // Absents
+        JTextField absentsField;
         tempHolder = new RoundedPanel(holder.getTheme());
         label = new JLabel("Absents:");
-        textField = new JTextField(Integer.toString(v.getAbsences()), 10);
+        absentsField = new JTextField(Integer.toString(v.getAbsences()), 10);
         tempHolder.add(label);
-        tempHolder.add(textField);
+        tempHolder.add(absentsField);
         statHolder.add(tempHolder);
 
         // Answered
+        JTextField answeredField;
         tempHolder = new RoundedPanel(holder.getTheme());
         label = new JLabel("Answered:");
-        textField = new JTextField(Integer.toString(v.getAnswered()), 10);
+        answeredField = new JTextField(Integer.toString(v.getAnswered()), 10);
         tempHolder.add(label);
-        tempHolder.add(textField);
+        tempHolder.add(answeredField);
         statHolder.add(tempHolder);
 
         // Passed
+        JTextField passedField;
         tempHolder = new RoundedPanel(holder.getTheme());
         label = new JLabel("Passed:");
-        textField = new JTextField(Integer.toString(v.getPassed()), 10);
+       passedField = new JTextField(Integer.toString(v.getPassed()), 10);
         tempHolder.add(label);
-        tempHolder.add(textField);
+        tempHolder.add(passedField);
         statHolder.add(tempHolder);
 
         // Phone
+        JTextField phoneField;
         tempHolder = new RoundedPanel(holder.getTheme());
         label = new JLabel("Phone:");
-        textField = new JTextField(Integer.toString(v.getPhone()), 10);
+        phoneField = new JTextField(Integer.toString(v.getPhone()), 10);
         tempHolder.add(label);
-        tempHolder.add(textField);
+        tempHolder.add(phoneField);
         statHolder.add(tempHolder);
 
         // Jail
+        JTextField jailField;
         tempHolder = new RoundedPanel(holder.getTheme());
         label = new JLabel("Jail:");
-        textField = new JTextField(Integer.toString(v.getJail()), 10);
+        jailField = new JTextField(Integer.toString(v.getJail()), 10);
         tempHolder.add(label);
-        tempHolder.add(textField);
+        tempHolder.add(jailField);
         statHolder.add(tempHolder);
 
         // Save button
@@ -142,7 +149,48 @@ public class EditVictimFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Insert save logic here
-                victimEditor.dispose();
+                int points = v.getPoints();
+                if(pointsField.getText().chars().allMatch(Character::isDigit) && !pointsField.getText().isEmpty() &&
+                        Integer.parseInt(pointsField.getText()) >=0)
+                    points = Integer.parseInt(pointsField.getText());
+                int absents = v.getAbsences();
+                if(absentsField.getText().chars().allMatch(Character::isDigit) && !absentsField.getText().isEmpty() &&
+                        Integer.parseInt(absentsField.getText()) >=0)
+                    absents = Integer.parseInt(absentsField.getText());
+                int timespicked = v.getNumPicked();
+                if(pickedField.getText().chars().allMatch(Character::isDigit) && !pickedField.getText().isEmpty() &&
+                        Integer.parseInt(pickedField.getText()) >=0)
+                    timespicked = Integer.parseInt(pickedField.getText());
+                int passed = v.getPassed();
+                if(passedField.getText().chars().allMatch(Character::isDigit) && !passedField.getText().isEmpty() &&
+                        Integer.parseInt(passedField.getText()) >=0)
+                    passed = Integer.parseInt(passedField.getText());
+                int answered = v.getAnswered();
+                if(answeredField.getText().chars().allMatch(Character::isDigit) && !answeredField.getText().isEmpty() &&
+                        Integer.parseInt(answeredField.getText()) >=0)
+                    answered = Integer.parseInt(answeredField.getText());
+                int phone = v.getPhone();
+                if(phoneField.getText().chars().allMatch(Character::isDigit) && !phoneField.getText().isEmpty() &&
+                        Integer.parseInt(phoneField.getText()) >=0)
+                    phone = Integer.parseInt(phoneField.getText());
+                int jail = v.getPhone();
+                if(jailField.getText().chars().allMatch(Character::isDigit) && !jailField.getText().isEmpty() &&
+                        Integer.parseInt(jailField.getText()) >=0)
+                    jail = Integer.parseInt(jailField.getText());
+                v.getName().setNickName(textField.getText());
+                Victim newGuy = new Victim(v.getName(),
+                        points,
+                        absents,
+                        timespicked,
+                        passed,
+                        answered,
+                        phone,
+                        jail);
+                holder.editVictim(newGuy);
+
+                //kill the frame
+                victimEditor.dispatchEvent(new WindowEvent(victimEditor, WindowEvent.WINDOW_CLOSING));
+                self.dispatchEvent(new WindowEvent(self, WindowEvent.WINDOW_CLOSING));
             }
         });
         statHolder.add(Box.createRigidArea(new Dimension(0, 10))); // Space before the save button
