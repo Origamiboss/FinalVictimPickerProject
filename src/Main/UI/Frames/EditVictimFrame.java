@@ -20,11 +20,11 @@ public class EditVictimFrame extends JFrame {
         holder = h;
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Edit Victim");
-
+        this.setPreferredSize(new Dimension(300, 500));
         // Use a custom panel with BoxLayout for vertical stacking of buttons
         RoundedPanel optionMenu = new RoundedPanel(holder.getTheme());
         optionMenu.setLayout(new BoxLayout(optionMenu, BoxLayout.Y_AXIS));
-        optionMenu.setPreferredSize(new Dimension(250, holder.getVictims().size() * 60)); // Increase initial width
+        optionMenu.setPreferredSize(new Dimension(250, holder.getVictims().size() * 110)); // Increase initial width
 
         for (int i = 0; i < holder.getVictims().size(); i++) {
             Victim v = holder.getVictims().get(i);
