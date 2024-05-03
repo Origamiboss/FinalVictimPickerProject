@@ -2,20 +2,22 @@ package Main.UI.Frames;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import Main.Holder;
 import Main.UI.Format.VicFormatter;
+import UIElements.Buttons.HeldButton;
 import UIElements.Buttons.RoundButton;
 import UIElements.Colors.CurrentUITheme;
 import UIElements.Colors.UIColors;
 import UIElements.Panels.RoundedPanel;
 import UIElements.TextCanvas;
 import Main.Assets.filePaths;
+import WriterReader.RandomizeImages;
 
 public class SettingsFrame extends JFrame {
     final private JFrame self = this;
@@ -25,6 +27,12 @@ public class SettingsFrame extends JFrame {
     private TextCanvas pictureFile;
     private JComboBox<String> backColorComboBox;
     private JComboBox<String> foreColorComboBox;
+    private HeldButton randAssignButton;
+    private HeldButton resetButton;
+    private RoundButton assignRandButton;
+    private RoundButton resetImagesButtons;
+    private boolean assignPhotos = false;
+    private boolean resetPhotos = false;
 
     public SettingsFrame(Holder h) {
         holder = h;
@@ -33,32 +41,50 @@ public class SettingsFrame extends JFrame {
         questionFile = new TextCanvas(holder.getTheme(), 10, true);
         pictureFile = new TextCanvas(holder.getTheme(), 10, true);
 
-        // Make the holder panel
         self.setTitle("Settings");
         RoundedPanel statHolder = new RoundedPanel(h.getTheme());
         self.add(statHolder);
         statHolder.setLayout(new BoxLayout(statHolder, BoxLayout.Y_AXIS));
 
-        // Background color chooser
-        RoundedPanel backcolorHolder = setupColorChooser("Foreground:", UIColors.colors, holder.getTheme().getBackgroundString());
+        RoundedPanel backcolorHolder = setupColorChooser("Background:", UIColors.colors, holder.getTheme().getBackgroundString());
         statHolder.add(backcolorHolder);
 
-        // Foreground color chooser
-        RoundedPanel frontColorHolder = setupColorChooser("Background:", UIColors.colors, holder.getTheme().getForegroundString());
+        RoundedPanel frontColorHolder = setupColorChooser("Foreground:", UIColors.colors, holder.getTheme().getForegroundString());
         statHolder.add(frontColorHolder);
 
-        // Add file path settings
         addFilePathSetting(statHolder, "Victim List:", "Select Victim List File", false, victimFile);
-        victimFile.setText(filePaths.saveFilePath + filePaths.vicList);
+        victimFile.setText(filePaths.UiImgPath + filePaths.vicList);
         addFilePathSetting(statHolder, "Question File:", "Select Question File", false, questionFile);
-        //questionFile.setText(filePaths.saveFilePath + filePaths.questFile);
+        questionFile.setText(filePaths.saveFilePath + filePaths.questList);
         addFilePathSetting(statHolder, "Picture Folder:", "Select Victim Picture Folder", true, pictureFile);
-        //pictureFile.setText(filePaths.saveFilePath + filePaths.picFolder);
+        pictureFile.setText(filePaths.photoPath);
 
-        // Display Canvas
+        RoundedPanel testPanel = new RoundedPanel(holder.getTheme());
+        JLabel messageLabel = new JLabel("Assign: Randomly assign victim names to photos, Reset: rename image files");
+        testPanel.add(messageLabel);
+        RoundButton assignRandButton = new RoundButton("ASSIGN", holder.getTheme());
+        assignRandButton.setForeground(Color.BLACK);
+        assignRandButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                assignRandButton.setBackground(h.getTheme().getCurrentBackgroundColor().action());
+                assignPhotos = true;
+            }
+        });
+        RoundButton resetImagesButtons = new RoundButton("RESET", holder.getTheme());
+        resetImagesButtons.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resetImagesButtons.setBackground(h.getTheme().getCurrentBackgroundColor().action());
+                resetPhotos = true;
+            }
+        });
+        assignRandButton.setSize(new Dimension(200, 100));
+        testPanel.add(assignRandButton);
+        testPanel.add(resetImagesButtons);
+        statHolder.add(testPanel);
+
         setupDisplayCanvas(statHolder);
-
-        // Save Button
         setupSaveButton(statHolder);
 
         self.pack();
@@ -114,23 +140,36 @@ public class SettingsFrame extends JFrame {
 
     private void setupSaveButton(RoundedPanel holderPanel) {
         RoundButton doneButton = new RoundButton("Save", holder.getTheme());
-        doneButton.addActionListener(e -> {
-            saveSettings();
-        });
+        doneButton.addActionListener(e -> saveSettings());
         VicFormatter buttonFormat = new VicFormatter(doneButton, 5);
         holderPanel.add(buttonFormat.getPanel());
     }
 
     private void saveSettings() {
         // Update file path settings in filePaths
-        //filePaths.vicList = victimFile.getText();
-        //filePaths.questFile = questionFile.getText();
-        //filePaths.picFolder = pictureFile.getText();
+        filePaths.UiImgPath = new File(victimFile.getText()).getParent() + "/";
+        filePaths.vicList = new File(victimFile.getText()).getName();
+        filePaths.saveFilePath = new File(questionFile.getText()).getParent() + "/";
+        filePaths.questList = new File(questionFile.getText()).getName();
+        filePaths.photoPath = pictureFile.getText();
 
         // Update UI theme in Holder
-        holder.setTheme(new CurrentUITheme((String) backColorComboBox.getSelectedItem(), (String) foreColorComboBox.getSelectedItem()));
+        holder.setTheme(new CurrentUITheme((String) foreColorComboBox.getSelectedItem(), (String) backColorComboBox.getSelectedItem()));
 
-        // Optionally write changes to a configuration file or database
-        JOptionPane.showMessageDialog(self, "Settings saved successfully!");
+        // Save the new paths to the configuration file
+        try {
+            filePaths.savePaths();  // Call the method to write changes to FilePaths.txt
+            JOptionPane.showMessageDialog(self, "Settings saved successfully. Please restart the application for changes to take effect.");
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(self, "Error saving settings: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        if(assignPhotos) {
+            holder.randomizeImages();
+            RandomizeImages randImg = holder.getRandomizeImg();
+            randImg.assignPhotosToVictims();
+        }
+        holder.setResetBool(resetPhotos);
+
     }
 }

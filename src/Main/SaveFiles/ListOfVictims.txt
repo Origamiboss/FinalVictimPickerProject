@@ -1,341 +1,330 @@
-First name:Danny
-Last name:Barmanbekov
+First name: Danny
+Last name: Barmanbekov
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Nate
-Last name:Benson
+First name: Nate
+Last name: Benson
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Nate
-Last name:Bittle
+First name: Nate
+Last name: Bittle
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:0
-Jail:0
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 0
+Jail: 0
 
-First name:Excalibur
-Last name:Bunker
+First name: Excalibur
+Last name: Bunker
 Nickname:
-Points:6
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Vincent
-Last name:Climer
+First name: Vincent
+Last name: Climer
 Nickname:
-Points:2
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Nicholas
-Last name:Colet
+First name: Nicholas
+Last name: Colet
 Nickname:
-Points:2
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Fabrice
-Last name:Faustin
+First name: Fabrice
+Last name: Faustin
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Seth
-Last name:Garner
+First name: Seth
+Last name: Garner
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Nicholas
-Last name:Gilleran
+First name: Nicholas
+Last name: Gilleran
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Akhil John
-Last name:Bosco
+First name: Akhil John
+Last name: Bosco
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Jeremiah
-Last name:Jordan
+First name: Jeremiah
+Last name: Jordan
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Bret
-Last name:Kagebein
+First name: Bret
+Last name: Kagebein
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Owen
-Last name:Kiilsgaard
+First name: Owen
+Last name: Kiilsgaard
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Chuckie
-Last name:Koch
+First name: Chuckie
+Last name: Koch
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Reagan
-Last name:Kohler
+First name: Reagan
+Last name: Kohler
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Jace
-Last name:Kramer
+First name: Jace
+Last name: Kramer
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Levi
-Last name:Landers
+First name: Levi
+Last name: Landers
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Abraham
-Last name:Martinez Brito
+First name: Abraham
+Last name: Martinez Brito
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Chandler
-Last name:Mason
+First name: Chandler
+Last name: Mason
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Connor
-Last name:Myers
+First name: Connor
+Last name: Myers
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Oluwatobiloba
-Last name:Olaoye
+First name: Oluwatobiloba
+Last name: Olaoye
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Connor
-Last name:Parr
+First name: Connor
+Last name: Parr
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Markie
-Last name:Salzwedel
+First name: Markie
+Last name: Salzwedel
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Canon
-Last name:Shaw
+First name: Canon
+Last name: Shaw
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Gavin
-Last name:Smith
+First name: Gavin
+Last name: Smith
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Josh
-Last name:Stapera
+First name: Josh
+Last name: Stapera
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Justin
-Last name:Stauffer
+First name: Justin
+Last name: Stauffer
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Kevin
-Last name:Stinnett
+First name: Kevin
+Last name: Stinnett
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Ethan
-Last name:Stucker
+First name: Ethan
+Last name: Stucker
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 
-First name:Heather
-Last name:Watson
+First name: Heather
+Last name: Watson
 Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
-
-First name:
-Last name:
-Nickname:
-Points:0
-Absents:0
-Answered:0
-Times Picked:0
-Passed:0
-Phone:2
-Jail:2
+Points: 0
+Absents: 0
+Answered: 0
+Times Picked: 0
+Passed: 0
+Phone: 2
+Jail: 2
 

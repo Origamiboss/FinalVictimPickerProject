@@ -51,6 +51,8 @@ public class PlayerDisplayPanel {
 
     //private HashMap<>
 
+    private Holder hold;
+
     ArrayList<PlayerPanel> players = new ArrayList<>();
     ArrayList<Victim> victims = new ArrayList<>();
 
@@ -67,8 +69,9 @@ public class PlayerDisplayPanel {
     private int panelWidth = 900;
     private int panelHeight = 250;
 
-    public PlayerDisplayPanel(CurrentUITheme thatTheme, ArrayList<Victim> inVic, UserStats inStats) {
+    public PlayerDisplayPanel(CurrentUITheme thatTheme, ArrayList<Victim> inVic, UserStats inStats, Holder holder) {
         victims = inVic;
+        hold = holder;
         theme = thatTheme;
         stats = inStats;
         grid = new GridBagConstraints();
@@ -112,10 +115,13 @@ public class PlayerDisplayPanel {
 
 
     public void addPlayerPanel() {
+        /*
         if (players.size() >= 15) {
-            new ErrorMessageFrame("Player limit reached.", holder);
+            new ErrorMessageFrame("Player limit reached.", holderPanel);
             return;
         }
+
+         */
 
         PlayerPanel newPlayer = new PlayerPanel(theme, stats);
         newPlayer.setElementNo(players.size());
@@ -138,10 +144,14 @@ public class PlayerDisplayPanel {
         randButton.addActionListener(e -> {
             Victim randomVictim;
             do {
-                randomVictim = RandStudentSelector.getRandomStudent(victims, players.stream().map(PlayerPanel::getVictim).collect(Collectors.toList()));
-            } while (players.contains(randomVictim));  // Check if the randomVictim is already in the players list
+                try {
+                    randomVictim = RandStudentSelector.getRandomStudent(victims, hold.getManager().presentVics());
+                } catch (RandStudentSelector.ArrayEmptyException ex) {
+                    throw new RuntimeException(ex);
+                }
+            } while (players.contains(randomVictim) && !hold.getManager().checkPresense(randomVictim));  // Check if the randomVictim is already in the players list
             currentNewPlayer.setPlayer(randomVictim);  // Use the final reference here
-            currentNewPlayer.getVictim().setNumPicked(1);
+            //currentNewPlayer.getVictim().setNumPicked(1);
         });
 
         RoundButton testButton = newPlayer.getTestButton();
@@ -273,6 +283,17 @@ public class PlayerDisplayPanel {
 
     public ArrayList<PlayerPanel> getPlayers(){
         return players;
+    }
+
+    public ArrayList<Victim> getRealVics(){
+        ArrayList<Victim> realVics = new ArrayList<>();
+        for(PlayerPanel panelPlayers: players){
+            if(!panelPlayers.getIsNull()){
+                realVics.add(panelPlayers.getVictim());
+            }
+        }
+
+        return realVics;
     }
 
     public PlayerDisplayPanel returnThis(){

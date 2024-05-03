@@ -71,7 +71,7 @@ import java.util.HashMap;
             map.putAll(userStats.getMap());
 
             // Panel for displaying players
-            PlayerDisplayPanel playerDisplayPanel = new PlayerDisplayPanel(mainHolder.getTheme(), mainHolder.getVictims(), userStats);
+            PlayerDisplayPanel playerDisplayPanel = new PlayerDisplayPanel(mainHolder.getTheme(), mainHolder.getVictims(), userStats, mainHolder);
             JPanel playerDisplayTopPanel = new JPanel();
             playerDisplayTopPanel.setBackground(null);
             playerDisplayTopPanel.add(playerDisplayPanel.getTopPanel());  // Add top panel of player display

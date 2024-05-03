@@ -1,0 +1,6 @@
+UiImgPath:".\src\Main\Assets\UIAssets/"
+PhotoPath:"./src/Main/Assets/VicPhotos/"
+VicList:"ListOfVictims.txt"
+UiTheme:"UITheme.txt"
+QuestList:"Questions.txt"
+SaveFilePath:".\src\Main\SaveFiles/"

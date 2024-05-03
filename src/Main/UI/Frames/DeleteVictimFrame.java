@@ -21,7 +21,7 @@ public class DeleteVictimFrame extends JFrame{
         // UI adjustments that match formatting requirements for the options panel
         RoundedPanel optionMenu = new RoundedPanel(h.getTheme()); // Replace instances of J-panel with RoundedPanel
         optionMenu.setLayout(new BoxLayout(optionMenu, BoxLayout.Y_AXIS));
-        optionMenu.setPreferredSize(new Dimension(300, holder.getVictims().size() * 110));
+        optionMenu.setPreferredSize(new Dimension(300, holder.getVictims().size() * 200));
 
         for (Victim v : holder.getVictims()) {
             String name = v.getName().getFirstName() + " " + v.getName().getLastName();

@@ -1,5 +1,6 @@
 package Main;
 
+import Main.Assets.filePaths;
 import Main.UI.HighScore;
 import Main.UI.Panels.HighScorePanel;
 import Questions.Questions;
@@ -33,6 +34,8 @@ public class Holder {
     private static HighScore highScore;
     private static HighScorePanel highScorePanel;
     public static ArrayList<Victim> victimsTopScores = new ArrayList<>();
+    private RandomizeImages randoImg;
+    private boolean resetImages = false;
 
     public Holder() throws FileNotFoundException{
         //Option to change filepath. Especially on first launch
@@ -62,8 +65,12 @@ public class Holder {
 
     // Be very careful with this. Should only be called if sure you want
     // Randomize images, giving a name from the victim list to each photo
-    public void randomizeImages(boolean reset){
+    public void randomizeImages(){
         randomizeImg = new RandomizeImages(victims, photoPath);
+    }
+
+    public RandomizeImages getRandomizeImg(){
+        return randomizeImg;
     }
 
     public void resetImages(boolean reset){
@@ -191,7 +198,12 @@ public class Holder {
         }
     }
 
+    public void setResetBool(boolean inBool){
+        resetImages = inBool;
+    }
+
     public void exit() {
+        resetImages(resetImages);
         System.exit(0);
     }
 }

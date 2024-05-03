@@ -18,6 +18,21 @@ public class VictimPanelManager {
         this.victims = displayPanel.getPlayers();
     }
 
+    public boolean checkPresense(Victim inVic){
+        boolean wasFound = false;
+        boolean presence = true;
+        for (PlayerPanel panel: victims){
+            if(inVic == panel.getVictim()){
+                presence = true;
+                wasFound = true;
+            }
+        }
+        if(!wasFound){
+            presence = false;
+        }
+        return presence;
+    }
+
     public void sendToVics(Instructions instructions){
         for (PlayerPanel panel: victims){
             if (panel.getPlayerDisplay().isHeld()){
@@ -66,6 +81,10 @@ public class VictimPanelManager {
                 }
             }
         }
+    }
+
+    public ArrayList<Victim> presentVics(){
+        return displayPanel.getRealVics();
     }
 
 }
