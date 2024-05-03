@@ -16,6 +16,11 @@ import java.awt.*;
 import java.util.*;
 
 public class QandAPanel {
+
+    boolean hasStarted;
+
+    int questionEnd;
+    int questionCounter;
     RoundedPanel mainPanel;
     VicFormatter mainFormat;
 
@@ -40,7 +45,7 @@ public class QandAPanel {
     // There can be <=4 possible
     ArrayList<QuestionAndButton> options;
     // Where all the questions are
-    private Queue<Questions> questionsQueue;
+    private ArrayList<Questions> questionsQueue;
 
     private HashMap<String, JComponent> map;
 
@@ -52,7 +57,11 @@ public class QandAPanel {
 
     public QandAPanel(CurrentUITheme inTheme){
 
-        questionsQueue = new LinkedList<>();
+        hasStarted = false;
+
+        questionCounter = 0;
+
+        questionsQueue = new ArrayList<>();
         options = new ArrayList<>();
 
         map = new HashMap<>();
@@ -190,14 +199,22 @@ public class QandAPanel {
     }
 
     public void setQuestions(ArrayList<Questions> questions) {
+        questionEnd = questions.size();
+
         // Clear the existing queue
         questionsQueue.clear();
+
+        System.out.println(questions.size());;
+
+        for(Questions quest: questions){
+            System.out.println(quest.getQuestion());
+        }
 
         // Shuffle the questions list
         Collections.shuffle(questions);
 
-        // Add all shuffled questions to the queue
-        questionsQueue.addAll(questions);
+        questionsQueue.clear();
+        questionsQueue = questions;
     }
 
     private void checkAnswer() {
@@ -207,6 +224,16 @@ public class QandAPanel {
         }
 
         boolean answerFound = false;
+
+        /*
+        for(int i = 0; i < options.size() - 1; i++){
+            if (options.get(i).getButtonHeld() && options.get(i++).getButtonHeld()){
+                options.get(i).getButton().setHeld(true);
+                //options.get(i++).getButton().setHeld();
+                return;
+            }
+        }
+         */
 
         for (QuestionAndButton option : options) {
             // Check if the option is selected
@@ -230,40 +257,47 @@ public class QandAPanel {
             System.out.println("No option selected or no correct option found.");
         }
 
+    }
 
+    private void displayNextQuestion(){
+        if (questionsQueue.isEmpty() && questionCounter == 0 && hasStarted == false){
+            System.out.println("Error displaying questions");
+        }
+        else if (!questionsQueue.isEmpty() && questionCounter == 0 && hasStarted == false){
+            hasStarted = true;
+
+            displayQuestion(questionsQueue.get(questionCounter));
+            currentQuestion = questionsQueue.get(questionCounter);
+
+        }
+        else if(!questionsQueue.isEmpty() && questionCounter >= 0 && questionCounter < questionEnd && hasStarted == true){
+            questionCounter++;
+
+            if(questionCounter > questionEnd){
+                questionCounter = questionEnd;
+            }
+
+            //displayedQuestions.get(questionCounter);
+
+            currentQuestion = questionsQueue.get(questionCounter);
+
+            displayQuestion(questionsQueue.get(questionCounter));
+
+        }
+        else if(!questionsQueue.isEmpty() && questionCounter == questionEnd && hasStarted != true){
+            System.out.println("Out of questions");
+        }
 
     }
 
-    private void displayNextQuestion() {
-        if (questionsQueue.isEmpty() && displayedQuestions.isEmpty()) {
-            JOptionPane.showMessageDialog(null,"No more questions available");
+    private void displayPreviousQuestion(){
+        if (questionCounter <= 0){
+            System.out.println("No previous questions available");
             return;
         }
+        questionCounter--;
 
-        if (!displayedQuestions.isEmpty() && !questionsQueue.isEmpty() && displayedQuestions.peek() == questionsQueue.peek()) {
-            displayedQuestions.pop(); // Remove current question to get to the previous one in history
-        }
-
-        if (!questionsQueue.isEmpty()) {
-            currentQuestion = questionsQueue.poll(); // Get next question from the queue
-            displayedQuestions.push(currentQuestion); // Push it onto the stack for history tracking
-        } else {
-            currentQuestion = displayedQuestions.peek();
-        }
-
-        displayQuestion(currentQuestion);
-    }
-
-    private void displayPreviousQuestion() {
-        if (displayedQuestions.size() <= 1) {
-            System.out.println("No previous question available.");
-            return;
-        }
-
-        displayedQuestions.pop(); // Remove current question to get to the previous one
-        currentQuestion = displayedQuestions.peek(); // Get the previous question
-
-        displayQuestion(currentQuestion);
+        displayQuestion(questionsQueue.get(questionCounter));
     }
 
     private void displayQuestion(Questions question) {

@@ -12,6 +12,7 @@ public class VicFormatter<T extends JComponent> {
     public VicFormatter(T component, int buffDistance){
         this.component = component;
         magPanel = new BufferedPanel<>(component, buffDistance);
+
     }
 
     public BufferedPanel getPanel(){

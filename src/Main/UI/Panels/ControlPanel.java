@@ -111,11 +111,13 @@ public class ControlPanel {
         map.put("csTopPanel", topPanel.getPanel());
 
         //Call the functions for the Add victim button
+        /*
         addVictim.getComponent().addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 new AddVictimFrame(holder);
             }
         });
+         */
         //Call the functions for the Delete victim button
         deleteVictim.getComponent().addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
@@ -162,6 +164,8 @@ public class ControlPanel {
         // Update the main control panel
         controlPanel.setBackground(currentTheme.getCurrentBackgroundColor().main());
         controlPanel.setForeground(currentTheme.getCurrentForegroundColor().main());
+
+        controlPanel.setOpaque(false);
 
         // Iterate through all components in the panel and update their colors
         for (Map.Entry<String, JComponent> entry : map.entrySet()) {
