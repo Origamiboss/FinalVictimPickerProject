@@ -1,6 +1,7 @@
 package UIElements.Panels;
 
 import Main.UI.Format.VicFormatter;
+import Main.UI.Panels.UserStats;
 import Students.Victim;
 import UIElements.Buttons.RoundButton;
 import UIElements.Buttons.RoundedButton;
@@ -10,6 +11,8 @@ import UIElements.Colors.Images;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 public class PlayerPanel extends JPanel {
@@ -28,11 +31,15 @@ public class PlayerPanel extends JPanel {
     private int buffDistance = 5;
     private int elementNo;
     private Victim victim;
+    private UserStats stats;
+    private boolean stillNull;
 
-    public PlayerPanel(CurrentUITheme theme){
+    public PlayerPanel(CurrentUITheme theme, UserStats playerStats){
         //this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        stillNull = true;
         this.theme = theme;
         this.setOpaque(false);
+        stats = playerStats;
 
         JPanel tempPanel = new JPanel();
         tempPanel.setLayout(new BorderLayout());
@@ -68,6 +75,15 @@ public class PlayerPanel extends JPanel {
         //tempPanel.add(buttonPanel);
         tempPanel.setOpaque(false);
         this.add(tempPanel);
+
+        player.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!stillNull){
+                    stats.updateStatText(victim);
+                }
+            }
+        });
 
     }
 
@@ -108,6 +124,7 @@ public class PlayerPanel extends JPanel {
     }
 
     public void setPlayer(Victim inVic){
+        stillNull = false;
         setVictim(inVic);
 
         imageGetter = new Images(victim.getName().getFirstName(), theme, "CustomImage");
@@ -119,6 +136,7 @@ public class PlayerPanel extends JPanel {
 
     public void setVictim(Victim inVic){
         victim = inVic;
+        repaint();
     }
 
     public Victim getVictim(){
@@ -146,6 +164,10 @@ public class PlayerPanel extends JPanel {
         // Revalidate and repaint to apply changes
         revalidate();
         repaint();
+    }
+
+    public boolean getIsNull(){
+        return stillNull;
     }
 
 }

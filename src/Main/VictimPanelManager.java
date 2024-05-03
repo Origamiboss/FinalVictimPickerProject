@@ -53,4 +53,17 @@ public class VictimPanelManager {
     public void deleteHeldVictims(){
     }
 
+    public void searchOption(Victim inVic){
+        boolean breaker = false;
+        for (int i = 0; i <= 15 && !breaker; i++){
+            if(victims.get(i).getPlayerDisplay().isHeld()){
+                if(victims.get(i).getIsNull()){
+                    PlayerPanel temp = victims.get(i);
+                    temp.setPlayer(inVic);
+                    breaker = true;
+                }
+            }
+        }
+    }
+
 }

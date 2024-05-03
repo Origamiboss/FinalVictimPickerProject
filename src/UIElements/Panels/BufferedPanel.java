@@ -37,6 +37,8 @@ public class BufferedPanel<T extends Component> extends JPanel {
         add(westRigidArea, BorderLayout.WEST);
         add(southRigidArea, BorderLayout.SOUTH);
         add(eastRigidArea, BorderLayout.EAST);
+
+        //setOpaque(true);
     }
 
     @Override

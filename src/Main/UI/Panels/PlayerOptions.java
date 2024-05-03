@@ -115,7 +115,8 @@ public class PlayerOptions {
 
         textPNL = new TextCanvas(theme, 19, true);
         VicFormatter textFormat = new VicFormatter(textPNL, buffDistance);
-        textPNL.setBackground(null);
+        //textFormat.getPanel().setOpaque(false);
+        textPNL.setBackground(theme.getCurrentBackgroundColor().main());
         textPNL.setOpaque(false);
         textPNL.setColumnWidths(3);
         map.put("poTextCanvas", textPNL);

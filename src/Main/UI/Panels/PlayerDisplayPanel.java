@@ -47,6 +47,8 @@ public class PlayerDisplayPanel {
 
     private CurrentUITheme theme;
 
+    private UserStats stats;
+
     //private HashMap<>
 
     ArrayList<PlayerPanel> players = new ArrayList<>();
@@ -65,12 +67,10 @@ public class PlayerDisplayPanel {
     private int panelWidth = 900;
     private int panelHeight = 250;
 
-    Holder holder;
-
-    public PlayerDisplayPanel(CurrentUITheme thatTheme, ArrayList<Victim> inVic, Holder h) {
-        holder = h;
+    public PlayerDisplayPanel(CurrentUITheme thatTheme, ArrayList<Victim> inVic, UserStats inStats) {
         victims = inVic;
         theme = thatTheme;
+        stats = inStats;
         grid = new GridBagConstraints();
         mainPanel = new RoundedPanel(theme);
         topPanel = new JPanel();
@@ -117,7 +117,7 @@ public class PlayerDisplayPanel {
             return;
         }
 
-        PlayerPanel newPlayer = new PlayerPanel(theme);
+        PlayerPanel newPlayer = new PlayerPanel(theme, stats);
         newPlayer.setElementNo(players.size());
         newPlayer.changeDisplayName("Player" + players.size());
         players.add(newPlayer);
@@ -141,6 +141,7 @@ public class PlayerDisplayPanel {
                 randomVictim = RandStudentSelector.getRandomStudent(victims, players.stream().map(PlayerPanel::getVictim).collect(Collectors.toList()));
             } while (players.contains(randomVictim));  // Check if the randomVictim is already in the players list
             currentNewPlayer.setPlayer(randomVictim);  // Use the final reference here
+            currentNewPlayer.getVictim().setNumPicked(1);
         });
 
         RoundButton testButton = newPlayer.getTestButton();
@@ -272,6 +273,10 @@ public class PlayerDisplayPanel {
 
     public ArrayList<PlayerPanel> getPlayers(){
         return players;
+    }
+
+    public PlayerDisplayPanel returnThis(){
+        return this;
     }
 
 }
