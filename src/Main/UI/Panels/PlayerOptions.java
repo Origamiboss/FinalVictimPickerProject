@@ -1,7 +1,9 @@
 package Main.UI.Panels;
 
 import Interfaces.Instructions;
+import Main.Holder;
 import Main.UI.Format.VicFormatter;
+import Main.UI.Frames.ErrorMessageFrame;
 import Main.VictimPanelManager;
 import Students.Victim;
 import UIElements.Buttons.HeldButton;
@@ -57,7 +59,7 @@ public class PlayerOptions {
 
     public static final int NUM_ATTRIBUTES = 6;
 
-    public PlayerOptions(CurrentUITheme theme, VictimPanelManager inManager){
+    public PlayerOptions(CurrentUITheme theme, VictimPanelManager inManager, Holder holder){
         map = new HashMap<>();
         manager = inManager;
         instructionsArray = new ArrayList<>();
@@ -152,6 +154,12 @@ public class PlayerOptions {
         sendButton.getComponent().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+
+                if (textPNL.getText().equals("")) //Empty text so don't send anything
+                    return;
+
+                if (textPNL.getText().equals("5")) //testing error message
+                    new ErrorMessageFrame("Text is 5", holder);
 
                 sendButtonInstruct.update(manager);
 

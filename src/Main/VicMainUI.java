@@ -80,7 +80,7 @@ import java.util.HashMap;
             mainHolder.setManagaer(manager);
 
             // Panel for player options
-            PlayerOptions playerOptions = new PlayerOptions(mainHolder.getTheme(), manager);
+            PlayerOptions playerOptions = new PlayerOptions(mainHolder.getTheme(), manager, mainHolder);
             JPanel playerOptionsPanel = new JPanel();
             playerOptionsPanel.setBackground(null);
             playerOptionsPanel.setOpaque(false);

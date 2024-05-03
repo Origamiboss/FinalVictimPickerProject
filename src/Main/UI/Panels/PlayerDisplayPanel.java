@@ -1,5 +1,7 @@
 package Main.UI.Panels;
 
+import Main.Holder;
+import Main.UI.Frames.ErrorMessageFrame;
 import com.sun.jdi.ArrayReference;
 import IOClasses.SimpleInstrHolder;
 import Interfaces.Instructions;
@@ -111,7 +113,7 @@ public class PlayerDisplayPanel {
 
     public void addPlayerPanel() {
         if (players.size() >= 15) {
-            System.out.println("Player limit reached.");
+            new ErrorMessageFrame("Player limit reached.", holder);
             return;
         }
 
