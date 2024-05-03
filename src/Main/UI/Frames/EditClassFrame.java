@@ -2,6 +2,8 @@ package Main.UI.Frames;
 
 import Main.Holder;
 import Students.Victim;
+import UIElements.Buttons.RoundButton;
+import UIElements.Panels.RoundedPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,18 +23,18 @@ public class EditClassFrame extends JFrame {
 
 
         //create the Panel to Edit those victims
-        JPanel mainpanel = new JPanel();
+        RoundedPanel mainpanel = new RoundedPanel(h.getTheme());
         self.add(mainpanel);
         //constrain layout
         mainpanel.setLayout(new BoxLayout(mainpanel,BoxLayout.X_AXIS));
         mainpanel.setPreferredSize(new Dimension(600,500));
 
-        JPanel statHolder = new JPanel();
+        RoundedPanel statHolder = new RoundedPanel(h.getTheme());
         statHolder.setPreferredSize(new Dimension(400,500));
         mainpanel.add(statHolder);
 
         //Create the Victim Holder
-        JPanel victimHolder = new JPanel();
+        RoundedPanel victimHolder = new RoundedPanel(h.getTheme());
         victimHolder.setLayout(new BoxLayout(victimHolder,BoxLayout.Y_AXIS));
         mainpanel.add(victimHolder);
 
@@ -42,7 +44,7 @@ public class EditClassFrame extends JFrame {
             //set the hashmap to false for everyone
             String id = v.getName().getFirstName() + v.getName().getNickName() + v.getName().getLastName();
             victimSelect.put(id, 0);
-            JPanel temp = new JPanel();
+            RoundedPanel temp = new RoundedPanel(h.getTheme());
             temp.setPreferredSize(new Dimension(150, 50));
             JCheckBox checked = new JCheckBox();
             temp.add(checked);
@@ -72,7 +74,7 @@ public class EditClassFrame extends JFrame {
 
         //create the stat holders and editors on the left side
         //Put them into their own panel so they stay together by using a pointer
-        JPanel tempHolder = new JPanel();
+        RoundedPanel tempHolder = new RoundedPanel(h.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,50));
         tempHolder.add(new JLabel("Times Picked:"));
         JTextField TimesPicked = new JTextField();
@@ -81,7 +83,7 @@ public class EditClassFrame extends JFrame {
         tempHolder.add(TimesPicked);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(h.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,50));
         tempHolder.add(new JLabel("Points:"));
         JTextField Points = new JTextField();
@@ -90,7 +92,7 @@ public class EditClassFrame extends JFrame {
         tempHolder.add(Points);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(h.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,50));
         tempHolder.add(new JLabel("Absents:"));
         JTextField Absents = new JTextField();
@@ -99,7 +101,7 @@ public class EditClassFrame extends JFrame {
         tempHolder.add(Absents);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(h.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,50));
         tempHolder.add(new JLabel("Answered:"));
         JTextField Answered = new JTextField();
@@ -108,7 +110,7 @@ public class EditClassFrame extends JFrame {
         tempHolder.add(Answered);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(h.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,50));
         tempHolder.add(new JLabel("Passed:"));
         JTextField Passed = new JTextField();
@@ -117,7 +119,7 @@ public class EditClassFrame extends JFrame {
         tempHolder.add(Passed);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(h.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,50));
         tempHolder.add(new JLabel("Phone:"));
         JTextField Phone = new JTextField();
@@ -126,7 +128,7 @@ public class EditClassFrame extends JFrame {
         tempHolder.add(Phone);
         statHolder.add(tempHolder);
 
-        tempHolder = new JPanel();
+        tempHolder = new RoundedPanel(h.getTheme());
         tempHolder.setPreferredSize(new Dimension(300,50));
         tempHolder.add(new JLabel("Jail:"));
         JTextField Jail = new JTextField();
@@ -135,8 +137,8 @@ public class EditClassFrame extends JFrame {
         tempHolder.add(Jail);
         statHolder.add(tempHolder);
 
-
-        JButton saveButton = new JButton("Save Stats");
+        String saveStats = "Save Stats";
+        RoundButton saveButton = new RoundButton(saveStats, h.getTheme());
         statHolder.add(saveButton);
 
         saveButton.addActionListener(new ActionListener() {

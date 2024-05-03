@@ -62,8 +62,16 @@ import java.util.HashMap;
             playerOptionsHolder.setLayout(new BoxLayout(playerOptionsHolder, BoxLayout.Y_AXIS));
             playerOptionsHolder.setBackground(mainHolder.getTheme().getCurrentBackgroundColor().main());
 
+            // Panel for current user stats
+
+            UserStats userStats = new UserStats(mainHolder.getTheme());
+            JPanel userStatsPanel = new JPanel();
+            userStatsPanel.setBackground(null);
+            userStatsPanel.add(userStats);  // Add main panel of user stats
+            map.putAll(userStats.getMap());
+
             // Panel for displaying players
-            PlayerDisplayPanel playerDisplayPanel = new PlayerDisplayPanel(mainHolder.getTheme(), mainHolder.getVictims());
+            PlayerDisplayPanel playerDisplayPanel = new PlayerDisplayPanel(mainHolder.getTheme(), mainHolder.getVictims(), userStats);
             JPanel playerDisplayTopPanel = new JPanel();
             playerDisplayTopPanel.setBackground(null);
             playerDisplayTopPanel.add(playerDisplayPanel.getTopPanel());  // Add top panel of player display
@@ -73,8 +81,7 @@ import java.util.HashMap;
             mainHolder.setManagaer(manager);
 
             // Panel for player options
-            PlayerOptions playerOptions = new PlayerOptions(mainHolder.getTheme(), manager);
-
+            PlayerOptions playerOptions = new PlayerOptions(mainHolder.getTheme(), manager, mainHolder);
             JPanel playerOptionsPanel = new JPanel();
             playerOptionsPanel.setBackground(null);
             playerOptionsPanel.setOpaque(false);
@@ -82,14 +89,6 @@ import java.util.HashMap;
 
             // Get map from PlayerOptions
             map.putAll(playerOptions.getMap());
-
-            // Panel for current user stats
-
-            UserStats userStats = new UserStats(mainHolder.getTheme());
-            JPanel userStatsPanel = new JPanel();
-            userStatsPanel.setBackground(null);
-            userStatsPanel.add(userStats);  // Add main panel of user stats
-            map.putAll(userStats.getMap());
 
             //userStatsPanel.setBackground(mainHolder.getTheme().getCurrentBackgroundColor().main());
             userStatsPanel.setOpaque(false);
@@ -137,7 +136,8 @@ import java.util.HashMap;
             // Control panel on the left
             ControlPanel controlPanel = new ControlPanel(mainHolder.getTheme(), mainHolder);
             // Search panel at the top
-            SearchPanel searchPanel = new SearchPanel(mainHolder.getTheme());
+            SearchPanel searchPanel = new SearchPanel(mainHolder);
+            searchPanel.setOpaque(true);
 
             // Put all components into map
             map.putAll(searchPanel.getMap());

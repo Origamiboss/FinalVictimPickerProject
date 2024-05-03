@@ -1,6 +1,8 @@
 package Main.UI.Panels;
 
+import Main.Holder;
 import Main.UI.Format.VicFormatter;
+import Students.Victim;
 import UIElements.Buttons.RoundButton;
 import UIElements.Buttons.RoundedButton;
 import UIElements.Colors.CurrentUITheme;
@@ -12,6 +14,9 @@ import UIElements.TextCanvas;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SearchPanel extends JPanel{
@@ -19,16 +24,23 @@ public class SearchPanel extends JPanel{
     CurrentUITheme theme;
     Images logoGetter;
     Image logo;
+    Holder holder;
     VicFormatter searchButton;
     VicFormatter textPanel;
     private VicFormatter topPanel;
     private TextCanvas textPNL;
     private RoundedPanel round;
     HashMap<String, JComponent> map;
+    private ArrayList<Victim> victims;
+    private String studentSearch;
+    private PlayerDisplayPanel displayPanel;
 
-    public SearchPanel(CurrentUITheme theme){
+    public SearchPanel(Holder tempHolder){
         map = new HashMap<>();
-        this.theme = theme;
+        this.theme = tempHolder.getTheme();
+        holder = tempHolder;
+        victims = holder.getVictims();
+        //displayPanel = holder.get
         int buffDistance = 5;
         searchPanel = new JPanel();
         searchPanel.setBackground(this.theme.getCurrentBackgroundColor().main());
@@ -57,6 +69,51 @@ public class SearchPanel extends JPanel{
         map.put("topSearchPanel", textPNL);
 
         textPNL.setColumnWidths(10);
+
+        magButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                boolean found = false;
+                Victim sendVic = null;
+                String inputText = textPNL.getText().trim().toLowerCase();
+
+                if (inputText == ""){
+
+                }
+                else{
+                    for(int i = 0; i < victims.size() && !found; i++){
+                        Victim vic = victims.get(i);
+                        String firstName = vic.getName().getFirstName().toLowerCase();
+                        String lastName = vic.getName().getLastName().toLowerCase();
+                        String fullName = (vic.getName().getFirstName() + " " + vic.getName().getLastName()).toLowerCase();
+                        String nickName = vic.getName().getNickName().toLowerCase();
+
+                        if(inputText.equals(firstName)){
+                            sendVic = victims.get(i);
+                            found = true;
+                        }
+                        else if(inputText.equals(lastName)){
+                            sendVic = victims.get(i);
+                            found = true;
+                        }
+                        else if(inputText.equals(fullName)){
+                            sendVic = victims.get(i);
+                            found = true;
+                        }
+                        else if(inputText.equals(nickName)){
+                            sendVic = victims.get(i);
+                            found = true;
+                        }
+                    }
+                    if (found && sendVic != null){
+                        holder.getManager().searchOption(sendVic);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Victim not found", "Victim was not found", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+        });
 
         searchPanel.add(imgPanel); // Adding the image panel to the search panel
         searchPanel.add(Box.createRigidArea(new Dimension(100, 1)));

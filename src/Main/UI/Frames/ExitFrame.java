@@ -6,7 +6,8 @@ import javax.swing.*;
 
 public class ExitFrame extends JFrame {
     public ExitFrame(Holder holder){
-        int response = JOptionPane.showConfirmDialog(this, "Are you sure?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, "Are you sure?", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         if (response == JOptionPane.YES_OPTION)
             holder.exit();

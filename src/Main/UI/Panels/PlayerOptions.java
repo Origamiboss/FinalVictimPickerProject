@@ -68,10 +68,8 @@ public class PlayerOptions {
     private static HighScorePanel highScorePanel;
     public static ArrayList<Victim> victimsTopScores = new ArrayList<>();
 
-    public PlayerOptions(CurrentUITheme theme, VictimPanelManager inManager){
-
+    public PlayerOptions(CurrentUITheme theme, VictimPanelManager inManager, Holder holder){
         PlayerOptions.theme = theme;
-
         map = new HashMap<>();
         manager = inManager;
         instructionsArray = new ArrayList<>();
@@ -127,7 +125,8 @@ public class PlayerOptions {
 
         textPNL = new TextCanvas(theme, 19, true);
         VicFormatter textFormat = new VicFormatter(textPNL, buffDistance);
-        textPNL.setBackground(null);
+        //textFormat.getPanel().setOpaque(false);
+        textPNL.setBackground(theme.getCurrentBackgroundColor().main());
         textPNL.setOpaque(false);
         textPNL.setColumnWidths(3);
         map.put("poTextCanvas", textPNL);
@@ -170,7 +169,7 @@ public class PlayerOptions {
                     return;
 
                 if (textPNL.getText().equals("5")) //testing error message
-                    new ErrorMessageFrame("Text equals 5");
+                    new ErrorMessageFrame("Text is 5", holder);
 
                 sendButtonInstruct.update(manager);
 
