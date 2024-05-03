@@ -115,13 +115,13 @@ public class PlayerDisplayPanel {
 
 
     public void addPlayerPanel() {
-        /*
+
         if (players.size() >= 15) {
-            new ErrorMessageFrame("Player limit reached.", holderPanel);
+            new ErrorMessageFrame("Player limit reached.", hold);
             return;
         }
 
-         */
+
 
         PlayerPanel newPlayer = new PlayerPanel(theme, stats);
         newPlayer.setElementNo(players.size());
@@ -138,20 +138,14 @@ public class PlayerDisplayPanel {
         // Attach remove action to the remove button of this PlayerPanel
         RoundButton removeButton = newPlayer.getRemoveButton();
         removeButton.addActionListener(e -> removePlayerPanel(newPlayer));
-
         RoundButton randButton = newPlayer.getRandomButton();
         final PlayerPanel currentNewPlayer = newPlayer;
         randButton.addActionListener(e -> {
             Victim randomVictim;
             do {
-                try {
-                    randomVictim = RandStudentSelector.getRandomStudent(victims, hold.getManager().presentVics());
-                } catch (RandStudentSelector.ArrayEmptyException ex) {
-                    throw new RuntimeException(ex);
-                }
-            } while (players.contains(randomVictim) && !hold.getManager().checkPresense(randomVictim));  // Check if the randomVictim is already in the players list
+                randomVictim = RandStudentSelector.getRandomStudent(victims, players.stream().map(PlayerPanel::getVictim).collect(Collectors.toList()));
+            } while (players.contains(randomVictim));  // Check if the randomVictim is already in the players list
             currentNewPlayer.setPlayer(randomVictim);  // Use the final reference here
-            //currentNewPlayer.getVictim().setNumPicked(1);
         });
 
         RoundButton testButton = newPlayer.getTestButton();

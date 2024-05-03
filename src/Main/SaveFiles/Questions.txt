@@ -10,7 +10,7 @@ Answer:True
 *True
 *False
 
-Question:We choose to go to the moon. Not because it is easy, but because it is ...
+Question:We choose to go to the moon. Not because it is easy, but because it is...
 Answer:Hard
 *Stupid
 *Pointless
@@ -23,246 +23,246 @@ Answer:9265359
 *9265359
 *2
 
-Question: Light travels faster than sound.
-Answer: True
+Question:Light travels faster than sound.
+Answer:True
 *True
 *False
 
-Question: What is the largest planet in our solar system?
-Answer: Jupiter
+Question:What is the largest planet in our solar system?
+Answer:Jupiter
 *Jupiter
 *Saturn
 *Neptune
 *Mars
 
-Question: The Great Wall of China is visible from space.
-Answer: False
+Question:The Great Wall of China is visible from space.
+Answer:False
 *True
 *False
 
-Question: What type of animal is a Komodo dragon?
-Answer: Lizard
+Question:What type of animal is a Komodo dragon?
+Answer:Lizard
 *Bird
 *Lizard
 *Fish
 *Mammal
 
-Question: The human body has four lungs.
-Answer: False
+Question:The human body has four lungs.
+Answer:False
 *True
 *False
 
-Question: Who invented the telephone?
-Answer: Alexander Graham Bell
+Question:Who invented the telephone?
+Answer:Alexander Graham Bell
 *Thomas Edison
 *Nikola Tesla
 *Alexander Graham Bell
 *Benjamin Franklin
 
-Question: The chemical symbol for silver is Ag.
-Answer: True
+Question:The chemical symbol for silver is Ag.
+Answer:True
 *True
 *False
 
-Question: What is the main ingredient in guacamole?
-Answer: Avocado
+Question:What is the main ingredient in guacamole?
+Answer:Avocado
 *Tomato
 *Cucumber
 *Avocado
 *Pepper
 
-Question: The Amazon River is the longest river in the world.
-Answer: False
+Question:The Amazon River is the longest river in the world.
+Answer:False
 *True
 *False
 
-Question: Who wrote "Pride and Prejudice"?
-Answer: Jane Austen
+Question:Who wrote "Pride and Prejudice"?
+Answer:Jane Austen
 *Jane Austen
 *Emily Bronte
 *Mary Shelley
 *Charles Dickens
 
-Question: The square root of 64 is 8.
-Answer: True
+Question:The square root of 64 is 8.
+Answer:True
 *True
 *False
 
-Question: Penguins can fly.
-Answer: False
+Question:Penguins can fly.
+Answer:False
 *True
 *False
 
-Question: What is the primary language spoken in Brazil?
-Answer: Portuguese
+Question:What is the primary language spoken in Brazil?
+Answer:Portuguese
 *Spanish
 *Portuguese
 *French
 *English
 
-Question: Vitamin C is also known as ascorbic acid.
-Answer: True
+Question:Vitamin C is also known as ascorbic acid.
+Answer:True
 *True
 *False
 
-Question: The currency of Japan is the Yen.
-Answer: True
+Question:The currency of Japan is the Yen.
+Answer:True
 *True
 *False
 
-Question: Photosynthesis occurs in which part of the plant?
-Answer: Leaf
+Question:Photosynthesis occurs in which part of the plant?
+Answer:Leaf
 *Root
 *Stem
 *Leaf
 *Flower
 
-Question: The Pyramids are located in which country?
-Answer: Egypt
+Question:The Pyramids are located in which country?
+Answer:Egypt
 *Egypt
 *Mexico
 *Peru
 *India
 
-Question: Sharks are mammals.
-Answer: False
+Question:Sharks are mammals.
+Answer:False
 *True
 *False
 
-Question: What is the hardest known natural material?
-Answer: Diamond
+Question:What is the hardest known natural material?
+Answer:Diamond
 *Gold
 *Iron
 *Diamond
 *Silicon
 
-Question: The symbol 'K' stands for Potassium on the periodic table.
-Answer: True
+Question:The symbol 'K' stands for Potassium on the periodic table.
+Answer:True
 *True
 *False
 
-Question: What is the capital city of Australia?
-Answer: Canberra
+Question:What is the capital city of Australia?
+Answer:Canberra
 *Sydney
 *Melbourne
 *Canberra
 *Perth
 
-Question: Bats are blind.
-Answer: False
+Question:Bats are blind.
+Answer:False
 *True
 *False
 
-Question: What gas do plants absorb from the atmosphere for photosynthesis?
-Answer: Carbon dioxide
+Question:What gas do plants absorb from the atmosphere for photosynthesis?
+Answer:Carbon dioxide
 *Oxygen
 *Nitrogen
 *Carbon dioxide
 *Hydrogen
 
-Question: A heptagon is a shape with how many sides?
-Answer: Seven
+Question:A heptagon is a shape with how many sides?
+Answer:Seven
 *Five
 *Six
 *Seven
 *Eight
 
-Question: The Titanic sank on its maiden voyage.
-Answer: True
+Question:The Titanic sank on its maiden voyage.
+Answer:True
 *True
 *False
 
-Question: "To Kill a Mockingbird" was written by which author?
-Answer: Harper Lee
+Question:"To Kill a Mockingbird" was written by which author?
+Answer:Harper Lee
 *Harper Lee
 *Ernest Hemingway
 *Jane Austen
 *Mark Twain
 
-Question: What is the capital of France?
-Answer: Paris
+Question:What is the capital of France?
+Answer:Paris
 *Paris
 *Berlin
 *Rome
 *Madrid
 
-Question: Which element is needed to make water?
-Answer: Hydrogen
+Question:Which element is needed to make water?
+Answer:Hydrogen
 *Oxygen
 *Carbon
 *Hydrogen
 
-Question: What year did the Titanic sink?
-Answer: 1912
+Question:What year did the Titanic sink?
+Answer:1912
 *1905
 *1912
 *1923
 *1898
 
-Question: Which planet is known as the Red Planet?
-Answer: Mars
+Question:Which planet is known as the Red Planet?
+Answer:Mars
 *Mars
 *Jupiter
 *Venus
 *Neptune
 
-Question: What is the chemical symbol for gold?
-Answer: Au
+Question:What is the chemical symbol for gold?
+Answer:Au
 *Ag
 *Au
 *Fe
 *Pt
 
-Question: Cats have how many lives, according to myth?
-Answer: Nine
+Question:Cats have how many lives, according to myth?
+Answer:Nine
 *Seven
 *Eight
 *Nine
 
-Question: Water boils at what temperature in Celsius?
-Answer: 100
+Question:Water boils at what temperature in Celsius?
+Answer:100
 *90
 *100
 *120
 *80
 
-Question: The largest desert in the world is?
-Answer: Sahara
+Question:The largest desert in the world is?
+Answer:Sahara
 *Sahara
 *Gobi
 *Antarctic
 *Kalahari
 
-Question: Who wrote 'Hamlet'?
-Answer: William Shakespeare
+Question:Who wrote 'Hamlet'?
+Answer:William Shakespeare
 *William Shakespeare
 *Charles Dickens
 *Jane Austen
 *Mark Twain
 
-Question: What is the hardest natural substance on Earth?
-Answer: Diamond
+Question:What is the hardest natural substance on Earth?
+Answer:Diamond
 *Gold
 *Iron
 *Diamond
 *Quartz
 
-Question: Basketball is played with how many players on each team?
-Answer: Five
+Question:Basketball is played with how many players on each team?
+Answer:Five
 *Four
 *Five
 *Six
 *Seven
 
-Question: The currency of the United States is?
-Answer: Dollar
+Question:The currency of the United States is?
+Answer:Dollar
 *Euro
 *Pound
 *Dollar
 *Yen
 
-Question: Elephants are native to which continents?
-Answer: Africa and Asia
+Question:Elephants are native to which continents?
+Answer:Africa and Asia
 *Europe and Asia
 *Africa and Asia
 *North and South America

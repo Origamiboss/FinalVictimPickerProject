@@ -2,6 +2,7 @@ package Students.StudentFunctions;
 
 import Students.Victim;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class RandStudentSelector {
@@ -14,35 +15,50 @@ public class RandStudentSelector {
         students = new ArrayList<>(impStudents);  // Create a new ArrayList from impStudents to avoid altering the original list
     }
 
-    public static Victim getRandomStudent(ArrayList<Victim> impStudents, ArrayList<Victim> presentVics) throws ArrayEmptyException {
-        if (impStudents.isEmpty()) {
-            throw new ArrayEmptyException("The list of important students is empty.");
-        }
+    public static Victim getRandomStudent(ArrayList<Victim> impStudents, List<Victim> existingPlayers) {
+        Victim pickedStudent = null;
 
-        Random rand = new Random();
-        ArrayList<Victim> availableStudents = new ArrayList<>(impStudents);
-        availableStudents.removeAll(presentVics);  // Remove all present victims from the list of candidates
+        try {
+            addStudents(impStudents);
 
-        if (availableStudents.isEmpty()) {
-            throw new ArrayEmptyException("No available students after filtering.");
-        }
+            Random rand = new Random();
+            double totalInfluence = 0;
 
-        double totalInfluence = 0;
-        for (Victim student : availableStudents) {
-            totalInfluence += student.getInfluenceScore();
-        }
-
-        double randomValue = rand.nextDouble() * totalInfluence;
-        double sum = 0;
-
-        for (Victim student : availableStudents) {
-            sum += student.getInfluenceScore();
-            if (randomValue <= sum) {
-                return student;
+            // Calculate total influence
+            for (Victim student : students) {
+                if (!existingPlayers.contains(student)) {
+                    totalInfluence += student.getInfluenceScore();
+                }
             }
-        }
 
-        return null;  // Fallback, shouldn't normally reach here if everything else is correct
+            double randomValue = rand.nextDouble() * totalInfluence;
+
+            List<Victim> candidates = new ArrayList<>();
+            double sum = 0;
+
+            for (Victim student : students) {
+                if (!existingPlayers.contains(student)) {
+                    sum += student.getInfluenceScore();
+                    if (randomValue <= sum) {
+                        candidates.add(student);
+                        if (randomValue < sum) {
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (!candidates.isEmpty()) {
+                int randomIndex = rand.nextInt(candidates.size());
+                pickedStudent = candidates.get(randomIndex);
+            }
+
+        } catch (ArrayEmptyException e) {
+            students = null;
+            System.out.println("List empty");
+            e.printStackTrace();
+        }
+        return pickedStudent;
     }
 
     public static class ArrayEmptyException extends Exception {
