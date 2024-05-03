@@ -4,6 +4,7 @@ import Interfaces.Instructions;
 import Main.Holder;
 import Main.UI.Format.VicFormatter;
 import Main.UI.Frames.ErrorMessageFrame;
+import Main.UI.HighScore;
 import Main.VictimPanelManager;
 import Students.Victim;
 import UIElements.Buttons.HeldButton;
@@ -22,6 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PlayerOptions {
+    private Victim victim;
     private RoundedPanel playerOptions;
     private VicFormatter plusButton;
     private VicFormatter minusButton;
@@ -55,11 +57,19 @@ public class PlayerOptions {
 
     private QandAPanel QAPanel;
 
+    private static Holder mainHolder;
+
     int pointText = 0;
 
+    private static CurrentUITheme theme;
+
     public static final int NUM_ATTRIBUTES = 6;
+    private static HighScore highScore;
+    private static HighScorePanel highScorePanel;
+    public static ArrayList<Victim> victimsTopScores = new ArrayList<>();
 
     public PlayerOptions(CurrentUITheme theme, VictimPanelManager inManager, Holder holder){
+        PlayerOptions.theme = theme;
         map = new HashMap<>();
         manager = inManager;
         instructionsArray = new ArrayList<>();
@@ -174,6 +184,7 @@ public class PlayerOptions {
                 else
                     pointText++;
                 textPNL.setText(String.valueOf(pointText));
+
             }
         });
 
@@ -267,6 +278,19 @@ public class PlayerOptions {
         playerOptions.repaint(); // Repaint the control panel to reflect the theme changes
     }
 
+    public static void currentHighScorePanel (HighScorePanel highScorePanel, HighScore highscore) //-------------------------------------------------------
+    {
+        PlayerOptions.highScorePanel = highScorePanel;
+        PlayerOptions.highScore = highscore;
+    }
+
+    public static void updateLeaderBoard(Victim victim) //-----------------------------------------------------------------------
+    {
+        highScore.storeUpdatedVictim(victim);
+        victimsTopScores = highScore.leaderBoard(5);
+        highScorePanel.updatePanel(victimsTopScores);
+    }
+
     public static class AddPointsInstructions implements Instructions<Victim>{
         private int points;
 
@@ -276,10 +300,13 @@ public class PlayerOptions {
 
         @Override
         public void update(Victim victim) {
+            System.out.println("Victim: " + victim.getFullName());
+            System.out.println("\tCurrent Points: " + victim.getPoints());
             victim.setPoints(points);
+            updateLeaderBoard(victim);
+
         }
     }
-
     public static class AddJailInstructions implements Instructions<Victim>{
         private int points;
 
@@ -289,7 +316,9 @@ public class PlayerOptions {
 
         @Override
         public void update(Victim victim) {
+            System.out.println("Current Points: " + victim.getPoints());
             victim.setJail(points);
+            updateLeaderBoard(victim);
         }
     }
 
@@ -303,6 +332,7 @@ public class PlayerOptions {
         @Override
         public void update(Victim victim) {
             victim.setPhone(points);
+            updateLeaderBoard(victim);
         }
     }
 
@@ -316,6 +346,7 @@ public class PlayerOptions {
         @Override
         public void update(Victim victim) {
             victim.setAbsences(points);
+            updateLeaderBoard(victim);
         }
     }
 
@@ -329,6 +360,7 @@ public class PlayerOptions {
         @Override
         public void update(Victim victim) {
             victim.setPoints(points);
+            updateLeaderBoard(victim);
         }
     }
 
@@ -348,7 +380,9 @@ public class PlayerOptions {
             else{
                 points = victim.getPoints() / 2;
             }
+
             victim.setPoints(points);
+            updateLeaderBoard(victim);
         }
     }
 
@@ -358,7 +392,8 @@ public class PlayerOptions {
 
         private boolean isCorrect;
 
-        public sendButtonInstruct(){
+        public sendButtonInstruct()
+        {
 
         }
 

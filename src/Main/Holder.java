@@ -1,6 +1,7 @@
 package Main;
 
-import Main.VictimPanelManager;
+import Main.UI.HighScore;
+import Main.UI.Panels.HighScorePanel;
 import Questions.Questions;
 import Students.StudentFunctions.Names;
 import Students.Victim;
@@ -28,6 +29,10 @@ public class Holder {
     private ArrayList<PlayerPanel> playerPanels;
     private ArrayList<Questions> questions;
     private VictimPanelManager manager;
+
+    private static HighScore highScore;
+    private static HighScorePanel highScorePanel;
+    public static ArrayList<Victim> victimsTopScores = new ArrayList<>();
 
     public Holder() throws FileNotFoundException{
         //Option to change filepath. Especially on first launch
@@ -93,6 +98,20 @@ public class Holder {
         return manager;
     }
 
+    public static void currentHighScorePanel(HighScorePanel highScorePanel, HighScore highscore) //-------------------------------------------------------
+    {
+        Holder.highScorePanel = highScorePanel;
+        Holder.highScore = highscore;
+
+    }
+
+    public static void updateLeaderBoard(Victim victim) //-----------------------------------------------------------------------
+    {
+        highScore.storeUpdatedVictim(victim);
+        victimsTopScores = highScore.leaderBoard(5);
+        highScorePanel.updatePanel(victimsTopScores);
+    }
+
     public void addVictim(String name){
         String[] names = name.split(" ");
         Victim newGuy;
@@ -151,7 +170,10 @@ public class Holder {
         }
         try{
             if(foundTheTarget)
+            {
                 Output.writeStudentFile(victims);
+                updateLeaderBoard(v);
+            }
             else
                 throw new Exception();
         }catch(ConcurrentModificationException e) {
